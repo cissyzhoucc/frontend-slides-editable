@@ -10,6 +10,10 @@ A Claude Code / Codex skill for creating stunning, animation-rich, single-file H
 
 **Frontend Slides - Editable** is the editable fork of **frontend-slides**. It preserves style discovery, viewport discipline, and PPT conversion from the original skill, then adds a full in-browser editing runtime. **Real decks should still implement each preset’s layout and signature elements from `STYLE_PRESETS.md`** — edit mode is an add-on, not permission to reuse one generic slide prototype for every aesthetic. `examples/generated/presets/` is for runtime smoke tests only.
 
+
+https://github.com/user-attachments/assets/dc1db494-5e8c-4bbc-9c4a-d02be74c8e89
+
+
 它适合“生成后还要继续改”的场景，例如：
 
 It is designed for workflows where the generated output must remain editable:
