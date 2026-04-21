@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSCO 2026 多发性骨髓瘤指南更新解读</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", Verdana, sans-serif;
+  background: #e8edf3;
+  color: #1a2a3f;
+  padding: 20px;
+  font-size: 16px;
+}
+/* English words will use Verdana via this class */
+.en, em, .num-big { font-family: Verdana, "Microsoft YaHei", sans-serif; }
+
+.deck { max-width: 1280px; margin: 0 auto; }
+
+.slide {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(13, 59, 102, 0.15);
+  margin-bottom: 32px;
+  padding: 55px 65px 70px;
+  min-height: 720px;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 8px;
+  background: linear-gradient(90deg, #0d3b66 0%, #1e5aa6 50%, #2e7dd7 100%);
+}
+.slide-num {
+  position: absolute;
+  top: 22px; right: 36px;
+  font-size: 14px;
+  color: #7a8ca3;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.slide h1 {
+  font-size: 40px;
+  color: #0d3b66;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+.slide h2 {
+  font-size: 34px;
+  color: #0d3b66;
+  margin-bottom: 22px;
+  font-weight: 800;
+  padding-bottom: 16px;
+  border-bottom: 4px solid #0d3b66;
+  position: relative;
+}
+.slide h2::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 110px; height: 4px;
+  background: #2e7dd7;
+}
+.subtitle {
+  color: #1e5aa6;
+  font-size: 19px;
+  margin-bottom: 26px;
+  font-weight: 600;
+}
+
+/* Cover */
+.cover {
+  background: linear-gradient(135deg, #06233f 0%, #0d3b66 50%, #1a4b8c 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 760px;
+}
+.cover::before { background: linear-gradient(90deg, #2e7dd7, #4a9eff, #2e7dd7); }
+.cover .tag {
+  background: rgba(255,255,255,0.12);
+  padding: 12px 32px;
+  border-radius: 32px;
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-bottom: 36px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  font-weight: 600;
+}
+.cover h1 {
+  font-size: 64px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.cover .sub {
+  font-size: 32px;
+  color: #4a9eff;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+.cover .authors {
+  font-size: 28px;
+  margin-bottom: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.cover .org {
+  font-size: 18px;
+  line-height: 2;
+  color: rgba(255,255,255,0.88);
+  max-width: 820px;
+  font-weight: 500;
+}
+
+/* TOC */
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.toc-item {
+  display: flex;
+  align-items: center;
+  padding: 22px 26px;
+  background: linear-gradient(135deg, #f0f5fb 0%, #e1ebf6 100%);
+  border-left: 6px solid #0d3b66;
+  border-radius: 10px;
+}
+.toc-item:nth-child(even) { border-left-color: #2e7dd7; }
+.toc-num {
+  font-family: Verdana, sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  color: #0d3b66;
+  margin-right: 22px;
+  min-width: 52px;
+}
+.toc-item:nth-child(even) .toc-num { color: #2e7dd7; }
+.toc-text { font-size: 20px; font-weight: 700; color: #0d3b66; }
+
+/* Highlight boxes */
+.highlight-box {
+  background: linear-gradient(135deg, #e8f1fc 0%, #d6e6f7 100%);
+  border-left: 6px solid #1e5aa6;
+  padding: 22px 28px;
+  border-radius: 10px;
+  margin: 22px 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1a2a3f;
+}
+.highlight-box strong { color: #0d3b66; }
+
+.key-quote {
+  background: linear-gradient(135deg, #0d3b66 0%, #1e5aa6 100%);
+  color: #fff;
+  padding: 26px 36px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 28px;
+  text-align: center;
+  line-height: 1.65;
+  box-shadow: 0 8px 24px rgba(13, 59, 102, 0.25);
+}
+
+.warning-box {
+  background: linear-gradient(135deg, #fff4e0 0%, #ffe8c7 100%);
+  border-left: 6px solid #d68c2a;
+  padding: 22px 28px;
+  border-radius: 10px;
+  margin: 22px 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Card grids */
+.cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 22px; }
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+.cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 24px; }
+
+.card {
+  background: #fff;
+  border: 2px solid #d6e2f0;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 4px 14px rgba(13, 59, 102, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 5px;
+  background: #0d3b66;
+}
+.card.blue::before { background: #1e5aa6; }
+.card.deepblue::before { background: #06233f; }
+.card.accent::before { background: #2e7dd7; }
+.card.gold::before { background: #d68c2a; }
+
+.card .icon-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d3b66, #1e5aa6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 18px;
+  font-family: Verdana, sans-serif;
+  box-shadow: 0 4px 12px rgba(13, 59, 102, 0.3);
+}
+.card.accent .icon-num { background: linear-gradient(135deg, #1e5aa6, #2e7dd7); }
+.card.gold .icon-num { background: linear-gradient(135deg, #d68c2a, #e9a94a); }
+
+.card h3 {
+  font-size: 20px;
+  color: #0d3b66;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+.card p { font-size: 16px; line-height: 1.75; color: #2c3e56; }
+
+/* Stats */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 26px 0; }
+.stats-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 26px 0; }
+.stats-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 26px 0; }
+
+.stat {
+  background: linear-gradient(135deg, #f0f5fb 0%, #dce8f5 100%);
+  padding: 26px 18px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #c5d7ea;
+}
+.stat .num {
+  font-family: Verdana, sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #0d3b66;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.stat .num.accent { color: #2e7dd7; }
+.stat .num.gold { color: #d68c2a; }
+.stat .label { font-size: 15px; color: #3d5572; font-weight: 600; line-height: 1.5; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+  box-shadow: 0 4px 14px rgba(13, 59, 102, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+th {
+  background: linear-gradient(135deg, #0d3b66, #1e5aa6);
+  color: #fff;
+  padding: 16px 18px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+}
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e1ebf6;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+}
+tr:nth-child(even) td { background: #f7fafd; }
+
+/* Timeline */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 30px 0;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 6%; right: 6%;
+  height: 4px;
+  background: linear-gradient(90deg, #0d3b66, #2e7dd7);
+  z-index: 0;
+}
+.tl-step { flex: 1; text-align: center; position: relative; z-index: 1; padding: 0 6px; }
+.tl-circle {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: #fff;
+  border: 5px solid #0d3b66;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #0d3b66;
+  font-size: 26px;
+  font-family: Verdana, sans-serif;
+  box-shadow: 0 6px 16px rgba(13, 59, 102, 0.25);
+}
+.tl-step:nth-child(even) .tl-circle { border-color: #2e7dd7; color: #2e7dd7; }
+.tl-label { font-size: 16px; font-weight: 700; color: #0d3b66; }
+.tl-desc { font-size: 13px; color: #5a7290; margin-top: 6px; line-height: 1.4; }
+
+/* Bullet list */
+.bullet-list { margin-top: 16px; }
+.bullet-list li {
+  list-style: none;
+  padding: 12px 0 12px 32px;
+  position: relative;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2c3e56;
+  border-bottom: 1px dashed #d6e2f0;
+}
+.bullet-list li:last-child { border-bottom: none; }
+.bullet-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 10px; top: 11px;
+  color: #1e5aa6;
+  font-weight: 900;
+  font-size: 18px;
+}
+.bullet-list li strong { color: #0d3b66; font-weight: 800; }
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 8px;
+  font-family: Verdana, "Microsoft YaHei", sans-serif;
+}
+.badge.new { background: #fff3d6; color: #a86b1e; border: 1px solid #e9c994; }
+.badge.hot { background: #ffe0dc; color: #a8341e; border: 1px solid #e99b94; }
+.badge.i { background: #dae9f8; color: #0d3b66; border: 1px solid #9dbfe1; }
+.badge.ii { background: #e3ebf5; color: #1e5aa6; border: 1px solid #a9bdd5; }
+.badge.iii { background: #eef2f7; color: #4a5f7a; border: 1px solid #b9c4d3; }
+
+/* Two column emphasis */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 22px;
+}
+.col-box {
+  padding: 24px;
+  border-radius: 12px;
+  background: #f0f5fb;
+  border-left: 6px solid #0d3b66;
+}
+.col-box.right { border-left-color: #2e7dd7; background: #e8f1fc; }
+.col-box h4 { color: #0d3b66; font-size: 20px; margin-bottom: 14px; font-weight: 800; }
+.col-box.right h4 { color: #1e5aa6; }
+.col-box p { font-size: 16px; line-height: 1.8; color: #2c3e56; }
+
+/* Section divider */
+.section-divider {
+  background: linear-gradient(135deg, #06233f 0%, #0d3b66 50%, #1a4b8c 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 500px;
+}
+.section-divider::before { background: linear-gradient(90deg, #2e7dd7, #4a9eff); height: 10px; }
+.section-divider .sec-num {
+  font-family: Verdana, sans-serif;
+  font-size: 110px;
+  font-weight: 900;
+  color: rgba(74, 158, 255, 0.28);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.section-divider h1 {
+  color: #fff;
+  font-size: 54px;
+  margin-bottom: 18px;
+  font-weight: 900;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+.section-divider .sec-sub {
+  font-size: 22px;
+  color: rgba(255,255,255,0.9);
+  max-width: 820px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Pyramid */
+.pyramid { display: flex; flex-direction: column; align-items: center; margin: 26px 0; }
+.pyr-level {
+  padding: 18px 36px;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 19px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+.pyr-1 { width: 42%; background: linear-gradient(135deg, #06233f, #0d3b66); }
+.pyr-2 { width: 68%; background: linear-gradient(135deg, #0d3b66, #1e5aa6); }
+.pyr-3 { width: 92%; background: linear-gradient(135deg, #1e5aa6, #2e7dd7); }
+
+/* Flow */
+.flow { display: flex; align-items: stretch; gap: 0; margin: 26px 0; }
+.flow-step {
+  flex: 1;
+  background: linear-gradient(135deg, #e8f1fc, #d6e6f7);
+  padding: 22px 16px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  margin-right: 20px;
+  border: 2px solid #c5d7ea;
+}
+.flow-step:last-child { margin-right: 0; }
+.flow-step:not(:last-child)::after {
+  content: "▶";
+  position: absolute;
+  right: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0d3b66;
+  font-size: 22px;
+  z-index: 2;
+  font-weight: 900;
+}
+.flow-step h4 { font-size: 16px; color: #0d3b66; margin-bottom: 8px; font-weight: 800; }
+.flow-step p { font-size: 14px; color: #2c3e56; line-height: 1.55; }
+.flow-step.highlight { background: linear-gradient(135deg, #0d3b66, #1e5aa6); border-color: #0d3b66; }
+.flow-step.highlight h4 { color: #fff; }
+.flow-step.highlight p { color: rgba(255,255,255,0.95); }
+
+/* Bar chart */
+.bar-chart { margin: 20px 0; }
+.bar-item { margin-bottom: 16px; }
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #2c3e56;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.bar-bg { background: #eaf0f7; border-radius: 22px; height: 28px; overflow: hidden; border: 1px solid #d6e2f0; }
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0d3b66, #2e7dd7);
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Verdana, sans-serif;
+}
+.bar-fill.light { background: linear-gradient(90deg, #6e8fb3, #a2bed8); }
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 24px;
+  left: 65px; right: 65px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #7a8ca3;
+  border-top: 1.5px solid #e1ebf6;
+  padding-top: 12px;
+  font-weight: 500;
+}
+
+/* End */
+.end {
+  background: linear-gradient(135deg, #06233f 0%, #0d3b66 50%, #1a4b8c 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 560px;
+}
+.end h1 {
+  color: #fff;
+  font-size: 58px;
+  margin-bottom: 24px;
+  font-weight: 900;
+}
+
+/* Research design box */
+.research-box {
+  background: #f0f5fb;
+  border: 2px solid #c5d7ea;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.research-box h5 {
+  color: #0d3b66;
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+.research-box p { font-size: 15px; line-height: 1.7; color: #2c3e56; }
+
+.small-note { font-size: 14px; color: #7a8ca3; margin-top: 16px; font-style: italic; }
+
+/* Content block with heading */
+.content-block {
+  background: #f7fafd;
+  border-left: 5px solid #1e5aa6;
+  padding: 20px 24px;
+  margin: 18px 0;
+  border-radius: 8px;
+}
+.content-block h4 {
+  color: #0d3b66;
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+.content-block p { font-size: 16px; line-height: 1.8; color: #2c3e56; }
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .slide { box-shadow: none; margin-bottom: 0; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ============ 封面 ============ -->
+<div class="slide cover">
+  <div class="tag">CSCO · 2026 版指南更新解读</div>
+  <h1>CSCO 浆细胞肿瘤指南更新解读</h1>
+  <div class="sub">多发性骨髓瘤部分</div>
+  <div class="authors">安 刚 &nbsp;&nbsp; 邱录贵</div>
+  <div class="org">
+    中国医学科学院血液病医院（中国医学科学院血液学研究所）<br>
+    国家血液系统疾病临床医学研究中心<br>
+    血液与健康全国重点实验室<br>
+    <strong style="color:#4a9eff">CSCO 骨髓瘤专家委员会</strong>
+  </div>
+</div>
+
+<!-- ============ 目录 ============ -->
+<div class="slide">
+  <span class="slide-num">目 录</span>
+  <h2>内容纲要</h2>
+  <div class="subtitle">CSCO 2026 多发性骨髓瘤诊疗指南 · 全面更新解读</div>
+  <div class="toc-grid">
+    <div class="toc-item"><div class="toc-num">01</div><div class="toc-text">指南总体变化概览</div></div>
+    <div class="toc-item"><div class="toc-num">02</div><div class="toc-text">诊断、分期与风险分层更新</div></div>
+    <div class="toc-item"><div class="toc-num">03</div><div class="toc-text">适合移植的新诊断多发性骨髓瘤更新</div></div>
+    <div class="toc-item"><div class="toc-num">04</div><div class="toc-text">不适合移植的新诊断多发性骨髓瘤更新</div></div>
+    <div class="toc-item"><div class="toc-num">05</div><div class="toc-text">复发 / 难治多发性骨髓瘤更新</div></div>
+    <div class="toc-item"><div class="toc-num">06</div><div class="toc-text">高危多发性骨髓瘤更新</div></div>
+    <div class="toc-item"><div class="toc-num">07</div><div class="toc-text">新增章节：伴中枢神经系统受累的多发性骨髓瘤</div></div>
+    <div class="toc-item"><div class="toc-num">08</div><div class="toc-text">CAR-T 与双特异性抗体更新</div></div>
+    <div class="toc-item"><div class="toc-num">09</div><div class="toc-text">疗效评估、MRD 与支持治疗</div></div>
+  </div>
+</div>
+
+<!-- ============ 第一章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">01</div>
+  <h1>指南总体变化概览</h1>
+  <div class="sec-sub">从 "推荐列表" 到 "循证路径" —— 指南理念的全面升级</div>
+</div>
+
+<!-- 2026 四大核心变化 -->
+<div class="slide">
+  <span class="slide-num">1.1 · 总览</span>
+  <h2>2026 版四大核心变化一览</h2>
+  <div class="highlight-box">
+    <strong>📖 总体定位：</strong>2026 版多发性骨髓瘤章节总体延续 2025 版的基本框架，但在结构、内容深度和治疗理念上均有所提升
+  </div>
+  <div class="cards-2">
+    <div class="card">
+      <div class="icon-num">1</div>
+      <h3>结构重塑</h3>
+      <p>最突出的变化包括：<strong>章节重组</strong>、新增 <strong>CNS-MM 章节</strong>、增加 <strong>"讨论" 模块</strong>、<strong>免疫治疗明显前移</strong></p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">2</div>
+      <h3>前线强化</h3>
+      <p>在新诊断患者中，<strong>四药联合方案的地位进一步上升</strong>，尤其是 <strong>CD38 单抗联合方案</strong>更趋前列</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">3</div>
+      <h3>免疫前移</h3>
+      <p>在复发 / 难治患者中，<strong>CAR-T 细胞治疗与双特异性抗体</strong>从后线探索逐渐进入<strong>更早线的正式推荐</strong></p>
+    </div>
+    <div class="card gold">
+      <div class="icon-num">4</div>
+      <h3>多靶点并行</h3>
+      <p>在后线治疗中，除 <strong>BCMA 靶点</strong>外，<strong>GPRC5D 靶点</strong>相关双抗被纳入，提示治疗进入<strong>多靶点时代</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- 四大主线驱动 -->
+<div class="slide">
+  <span class="slide-num">1.2 · 总览</span>
+  <h2>四大主线驱动指南全面升级</h2>
+  <div class="cards-4">
+    <div class="card">
+      <div class="icon-num">01</div>
+      <h3>结构提升</h3>
+      <p>从"推荐列表型"向"推荐+循证解释型"转变</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">02</div>
+      <h3>前线强化</h3>
+      <p>新诊断 MM 中 CD38 单抗联合 VRd/KRd 四药方案地位提升</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">03</div>
+      <h3>免疫前移</h3>
+      <p>复发/难治 MM 中 CAR-T 和双抗突破极后线向更早阶段渗透</p>
+    </div>
+    <div class="card gold">
+      <div class="icon-num">04</div>
+      <h3>人群细化</h3>
+      <p>完善高危定义，新增 CNS-MM 独立章节，填补亚型管理空白</p>
+    </div>
+  </div>
+  <div class="key-quote">四大主线共同推动指南从静态的"推荐列表"向动态的"分层路径管理"跃升</div>
+</div>
+
+<!-- 结构重组对比 -->
+<div class="slide">
+  <span class="slide-num">1.3 · 总览</span>
+  <h2>结构重组：2025 vs 2026 章节架构对比</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>📋 2025 版目录</h4>
+      <ul class="bullet-list">
+        <li>诊断</li>
+        <li>分层</li>
+        <li>新诊断治疗</li>
+        <li>复发治疗</li>
+        <li>高危</li>
+        <li>免疫治疗</li>
+        <li>支持治疗</li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>🆕 2026 版目录</h4>
+      <ul class="bullet-list">
+        <li><strong>治疗模块整合</strong>（前线 / 后线更连贯）</li>
+        <li><strong>新增：</strong>"伴中枢神经系统受累的多发性骨髓瘤（CNS-MM）"独立章节 <span class="badge new">NEW</span></li>
+        <li><strong>新增：</strong>每个主要板块后的"讨论"模块 <span class="badge new">NEW</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">结构重组使高危管理、复发治疗和免疫治疗进展的层级更加清晰易查</div>
+</div>
+
+<!-- 新增讨论模块 -->
+<div class="slide">
+  <span class="slide-num">1.4 · 总览</span>
+  <h2>新增"讨论"模块：从"推荐什么"到"为何推荐"</h2>
+  <div class="highlight-box">
+    <strong>🎯 核心转变：</strong>从"告诉你推荐什么"扩展为"<strong>解释为什么这样推荐</strong>"
+  </div>
+  <div class="subtitle" style="margin-top:20px">涵盖六大维度</div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>① 流行病学与疾病特征</h3>
+      <p>疾病背景与中国现状</p>
+    </div>
+    <div class="card blue">
+      <h3>② 治疗前评估与检查逻辑</h3>
+      <p>完整诊断与分层依据</p>
+    </div>
+    <div class="card accent">
+      <h3>③ 诊断标准与疾病定义</h3>
+      <p>分型与亚型识别</p>
+    </div>
+    <div class="card">
+      <h3>④ 分期系统和高危分层演变</h3>
+      <p>预后分层体系进展</p>
+    </div>
+    <div class="card blue">
+      <h3>⑤ 新诊断及复发难治治疗思路</h3>
+      <p>治疗决策逻辑</p>
+    </div>
+    <div class="card accent">
+      <h3>⑥ 支持治疗与全程管理要点</h3>
+      <p>全程慢病管理</p>
+    </div>
+  </div>
+  <div class="key-quote">实现了从"告诉你推荐什么"到"解释为什么这样推荐"的循证逻辑升级</div>
+</div>
+
+<!-- ============ 第二章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">02</div>
+  <h1>诊断、分期与风险分层</h1>
+  <div class="sec-sub">精准化再进一步 —— 从预后描述到治疗决策起点</div>
+</div>
+
+<!-- 治疗前评估 -->
+<div class="slide">
+  <span class="slide-num">2.1 · 诊断分层</span>
+  <h2>治疗前评估：术语规范化</h2>
+  <table>
+    <thead>
+      <tr><th style="width:15%">评估项目</th><th style="width:50%">Ⅰ 级推荐</th><th style="width:20%">Ⅱ 级推荐</th><th style="width:15%">Ⅲ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>细胞遗传学</strong></td>
+        <td>染色体核型；FISH 检查（CD138 分选）：至少应包括 <strong style="color:#c0392b">1q21 获得/扩增</strong>、1p 缺失、17p 缺失、t(4;14)、t(11;14)、t(14;16)，有条件者可加做 t(6;14)、t(14;20)、<em>MYC</em> 易位</td>
+        <td><em>IGH</em> 及 <em>IGL</em> V 区 VDJ 重排谱系检测</td>
+        <td>NGS 检测基因突变</td>
+      </tr>
+      <tr>
+        <td><strong>其他影像学检查</strong></td>
+        <td>心电图，心脏、肝、肾超声</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>穿刺活检</strong></td>
+        <td>病变部位（骨、软组织）活检（Ki-67）</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="content-block">
+    <h4>三大要点</h4>
+    <ul class="bullet-list">
+      <li><strong>总体框架稳定：</strong>延续病史、实验室、骨髓、影像和并发症评估</li>
+      <li><strong>术语规范修订：</strong>将"1q21 扩增"更严谨地表述为"<strong>1q21 获得 / 扩增</strong>"</li>
+      <li><strong>强调基础状态：</strong>重点评估肾功能、骨病、感染风险与血栓风险</li>
+    </ul>
+  </div>
+  <div class="key-quote">评估框架稳定，但更契合现代分层管理与多靶点免疫治疗时代的需求</div>
+</div>
+
+<!-- IMS-IWG 分层 -->
+<div class="slide">
+  <span class="slide-num">2.2 · 诊断分层</span>
+  <h2>新增 IMS-IWG 分层系统：多维预后评估再升级</h2>
+  <div class="highlight-box">
+    <strong>📊 更新说明：</strong>2025 版中常用分期和预后分层体系包括 DS 分期、ISS、R-ISS、MASS、R2-ISS 和 MPSS 等；<strong>2026 版在保留上述体系基础上，新增了 IMS-IWG 分层系统</strong>
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>✨ 升级体现</h3>
+      <p>IMS-IWG 的纳入体现了指南对现代预后评估的进一步升级，强调不仅看传统临床指标，也要<strong>结合细胞遗传学异常与生物学特征</strong></p>
+    </div>
+    <div class="card blue">
+      <h3>🔄 综合使用</h3>
+      <p>这一更新提示临床在风险评估时<strong>不能只依赖单一系统</strong>，而应根据治疗场景和人群特征<strong>综合使用不同分层工具</strong></p>
+    </div>
+    <div class="card accent">
+      <h3>🎯 精准识别</h3>
+      <p>新增 IMS-IWG 有助于更准确识别真正的<strong>高危与超高危患者</strong>，为强化治疗、免疫治疗前移或临床试验入组提供依据</p>
+    </div>
+  </div>
+  <div class="warning-box">
+    <strong>⚠️ IMS-IWG 标危定义：</strong>所有不符合高危标准的患者群体
+  </div>
+</div>
+
+<!-- 复发 MM 高危定义 -->
+<div class="slide">
+  <span class="slide-num">2.3 · 诊断分层</span>
+  <h2>复发 MM 高危定义更新：动态高危标准统一为"18 个月"</h2>
+  <div class="cards-2">
+    <div class="card">
+      <h3>初诊 MM（HRMM）</h3>
+      <p style="color:#1e5aa6;font-weight:700;margin-bottom:8px">具备如下任何一项可认为是高危：</p>
+      <ul class="bullet-list">
+        <li>R-ISS Ⅲ 期</li>
+        <li>非骨旁髓外病变</li>
+        <li>存在循环浆细胞 <sup>a</sup></li>
+        <li>具有一种及以上高危遗传学异常：t(4;14)、t(14;16)、t(14;20)、del(17/17p)、1q21 获得/扩增 <sup>b</sup>、del(1p32)、<em>TP53</em> 突变</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>复发 MM（RRMM）<span class="badge new">统一更新</span></h3>
+      <p style="color:#1e5aa6;font-weight:700;margin-bottom:8px">具备如下任何一项可认为是高危：</p>
+      <ul class="bullet-list">
+        <li><strong>从开始治疗到复发不足 18 个月</strong></li>
+        <li>髓外复发和 / 或出现循环浆细胞</li>
+        <li>复发时新出现 1q21 获得 / 扩增和 / 或 del(17/17p) / <em>TP53</em> 突变</li>
+      </ul>
+    </div>
+  </div>
+  <div class="small-note">注：a. 外周血浆细胞比例 ≥5%，定义为浆细胞白血病；b. 单独的 1q21 获得或者扩增不能定义为 HRMM</div>
+</div>
+
+<!-- 风险分层：治疗路径起点 -->
+<div class="slide">
+  <span class="slide-num">2.4 · 诊断分层</span>
+  <h2>风险分层：不止预后描述，更是治疗路径的起点</h2>
+  <div class="content-block">
+    <h4>核心意义三层转变</h4>
+    <ul class="bullet-list">
+      <li>分期与风险分层更新的核心意义在于帮助医生<strong>更精准地决定治疗强度</strong>，而不是单纯进行预后描述</li>
+      <li>在四药联合和免疫治疗快速发展的背景下，<strong>单一异常已不足以完整描述风险</strong>，基因异常的共存模式和疾病行为特征更重要</li>
+      <li>2026 版更强调"<strong>现代化高危评估</strong>"，有助于识别那些虽然临床分期不高、但生物学行为恶劣的患者</li>
+    </ul>
+  </div>
+  <div class="cards-4">
+    <div class="card">
+      <div class="icon-num">①</div>
+      <h3>优先强化</h3>
+      <p>是否优先采用<strong>四药诱导方案</strong>？</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">②</div>
+      <h3>移植时机</h3>
+      <p>是否考虑<strong>早期自体移植或串联移植</strong>？</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">③</div>
+      <h3>维持强度</h3>
+      <p>是否需要<strong>双药或三药长期维持</strong>？</p>
+    </div>
+    <div class="card gold">
+      <div class="icon-num">④</div>
+      <h3>免疫前置</h3>
+      <p>是否应更早纳入<strong>新型免疫治疗</strong>或临床试验？</p>
+    </div>
+  </div>
+  <div class="key-quote">风险分层已成为贯穿治疗路径设计的核心工具，直接决定治疗强度的适配</div>
+</div>
+
+<!-- ============ 第三章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">03</div>
+  <h1>适合移植 NDMM</h1>
+  <div class="sec-sub">四药前置 · 移植核心 · 维持深化</div>
+</div>
+
+<!-- 路径总览 -->
+<div class="slide">
+  <span class="slide-num">3.1 · 适合移植</span>
+  <h2>适合移植 NDMM 更新总览：路径稳定，两端突破</h2>
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-circle">1</div>
+      <div class="tl-label">诱导治疗</div>
+      <div class="tl-desc" style="color:#c0392b;font-weight:700">⚡ 更新重点</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">2</div>
+      <div class="tl-label">干细胞动员</div>
+      <div class="tl-desc">方案稳定</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">3</div>
+      <div class="tl-label">自体移植</div>
+      <div class="tl-desc">核心地位</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">4</div>
+      <div class="tl-label">巩固治疗</div>
+      <div class="tl-desc">深化缓解</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">5</div>
+      <div class="tl-label">维持治疗</div>
+      <div class="tl-desc" style="color:#c0392b;font-weight:700">⚡ 更新重点</div>
+    </div>
+  </div>
+  <div class="cards-4">
+    <div class="card">
+      <h3>◆ 核心路径不变</h3>
+      <p>延续五步标准模式</p>
+    </div>
+    <div class="card blue">
+      <h3>◆ 诱导期突破</h3>
+      <p>四药联合方案优先级大幅提升，<strong>CD38 单抗方案</strong>更趋前列</p>
+    </div>
+    <div class="card accent">
+      <h3>◆ 移植地位稳固</h3>
+      <p><strong>ASCT</strong> 依然是现阶段追求深缓解的关键手段</p>
+    </div>
+    <div class="card gold">
+      <h3>◆ 巩固与维持深化</h3>
+      <p>强化长期管理理念，对<strong>高危患者持续实现深度疾病控制</strong></p>
+    </div>
+  </div>
+  <div class="key-quote">整体路径保持稳定，但诱导期四药前置，维持期更强调长期的深度疾病控制</div>
+</div>
+
+<!-- 诱导治疗变革 -->
+<div class="slide">
+  <span class="slide-num">3.2 · 适合移植</span>
+  <h2>诱导治疗变革：CD38 单抗四药方案跃升 Ⅰ 类推荐</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐（四药方案优先）</th><th>Ⅱ 级推荐</th><th>Ⅲ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • <strong style="color:#c0392b">达雷妥尤单抗 + 硼替佐米 + 来那度胺 + 地塞米松（1 类）</strong><br>
+          • <strong style="color:#c0392b">艾沙妥昔单抗 + 硼替佐米 + 来那度胺 + 地塞米松（1 类）</strong><br>
+          • 硼替佐米 + 来那度胺 + 地塞米松（1 类）<br>
+          • 卡非佐米 + 来那度胺 + 地塞米松（1 类）<br>
+          • 达雷妥尤单抗 + 卡非佐米 + 来那度胺 + 地塞米松（1 类）<br>
+          • 艾沙妥昔单抗 + 卡非佐米 + 来那度胺 + 地塞米松（1 类）<br>
+          • 硼替佐米 + 环磷酰胺 + 地塞米松（1 类）<br>
+          • 卡非佐米 + 环磷酰胺 + 地塞米松（1 类）<br>
+          • 达雷妥尤单抗 + 硼替佐米 + 环磷酰胺 + 地塞米松（1 类）<br>
+          • 硼替佐米 + 泊马度胺 + 地塞米松
+        </td>
+        <td>
+          • 伊沙佐米 + 来那度胺 + 地塞米松<br>
+          • 硼替佐米 + 环磷酰胺 + 地塞米松 + 来那度胺<br>
+          • 达雷妥尤单抗（2A 类）<br>
+          • 硼替佐米 + 多柔比星 + 地塞米松（2A 类）<br>
+          • 卡非佐米 + 环磷酰胺 + 地塞米松（2 类）<br>
+          • 来那度胺 + 地塞米松（2 类）
+        </td>
+        <td>
+          • 硼替佐米 + 地塞米松<br>
+          • 沙利度胺 + 顺铂 + 多柔比星 + 环磷酰胺<br>
+          • 依托泊苷（VTD-PACE）（3 类）
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <strong>✨ 2026 版优先推荐：</strong>CD38 单抗联合四药方案位置更加前置（Ⅲ 期 <em>PERSEUS</em> 研究，<em>GMMG-HD7</em> 研究）<br>
+    <strong>🎯 核心逻辑驱动：</strong>追求尽可能早的深度缓解 → 追求更高的 MRD 阴性率 → 为后续移植和维持奠定最优的疾病控制基础
+  </div>
+</div>
+
+<!-- PERSEUS 研究 -->
+<div class="slide">
+  <span class="slide-num">3.3 · 适合移植</span>
+  <h2>PERSEUS 研究：D-VRd 诱导，48 月 PFS 率 84.3%</h2>
+  <div class="research-box">
+    <h5>研究设计（N=709）</h5>
+    <p><strong>入组标准：</strong>年龄 18-70 岁，NDMM 适合移植，ECOG PS ≤2<br>
+    <strong>随机化 1:1 →</strong> D-VRd（n=355）vs VRd（n=354）→ ASCT → 巩固（C5-6）→ 维持（C7+：D-R / R）<br>
+    <strong>主要终点：</strong>PFS；<strong>关键次要终点：</strong>≥CR 率、MRD 阴性率、OS</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">84.3%</div><div class="label">D-VRd 48 月 PFS 率</div></div>
+    <div class="stat"><div class="num accent">HR 0.42</div><div class="label">风险降低 58%<br>(P<.0001)</div></div>
+    <div class="stat"><div class="num gold">87.9%</div><div class="label">≥CR 率<br>(vs VRd 70.1%)</div></div>
+    <div class="stat"><div class="num">75.2%</div><div class="label">MRD 阴性率 (10⁻⁵)<br>(vs VRd 47.5%)</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>疗效指标</th><th>D-VRd (n=355)</th><th>VRd (n=354)</th><th>OR (95% CI)</th><th>P 值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>≥CR, %</td><td><strong>87.9</strong></td><td>70.1</td><td>3.13 (2.11-4.65)</td><td><.001</td></tr>
+      <tr><td>MRD 阴性 (10⁻⁶), %</td><td><strong>65.1</strong></td><td>32.2</td><td>3.97 (2.90-5.43)</td><td><.0001</td></tr>
+      <tr><td>持续 MRD 阴性 ≥12 月, %</td><td><strong>64.8</strong></td><td>29.7</td><td>4.42 (3.22-6.08)</td><td><.0001</td></tr>
+    </tbody>
+  </table>
+  <div class="key-quote">Ⅰ 类推荐依据：48 月 PFS 率 84.3%，较传统 VRd 降低 58% 疾病进展或死亡风险</div>
+</div>
+
+<!-- GMMG-HD7 研究 -->
+<div class="slide">
+  <span class="slide-num">3.4 · 适合移植</span>
+  <h2>GMMG-HD7 研究：Isa-RVd 显著提升 MRD 阴性率</h2>
+  <div class="research-box">
+    <h5>研究设计（N=662，德国 67 个中心）</h5>
+    <p><strong>入组标准：</strong>年龄 18-70 岁，符合 HDT 和 ASCT 治疗条件，ECOG PS≤2<br>
+    <strong>随机化 1:1 →</strong> Isa + RVd（n=331）vs RVd（n=329）→ HDT + ASCT → 维持（Isa + R / R）<br>
+    <strong>主要终点：</strong>诱导后 MRD 阴性率（NGF 10⁻⁵）和第二次随机化后 PFS</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">59</div><div class="label">中位年龄</div></div>
+    <div class="stat"><div class="num accent">8%</div><div class="label">R-ISS Ⅲ 期</div></div>
+    <div class="stat"><div class="num gold">18%</div><div class="label">高危细胞遗传学</div></div>
+    <div class="stat"><div class="num">6%</div><div class="label">肾功能不全</div></div>
+  </div>
+  <div class="bar-chart">
+    <div class="bar-item">
+      <div class="bar-label"><span>诱导后 MRD 阴性率（主要终点）</span><span><strong>Isa-RVd 50.1% vs RVd 35.6%</strong> · OR 1.82 · P<0.0001</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:50.1%">50.1%</div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span>移植后 MRD 阴性率</span><span><strong>Isa-RVd 66.2% vs RVd 47.7%</strong> · OR 2.13 · P<0.0001</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:66.2%">66.2%</div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span>持续 MRD 阴性率</span><span><strong>Isa-RVd 53.1% vs RVd 38%</strong> · OR 1.84 · P=0.0008</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:53.1%">53.1%</div></div>
+    </div>
+  </div>
+  <div class="key-quote">Isa-RVd 在诱导后、移植后、持续 MRD 阴性率均显著优于 RVd，支持 Ⅰ 类推荐</div>
+</div>
+
+<!-- Ⅱ级推荐新增 -->
+<div class="slide">
+  <span class="slide-num">3.5 · 适合移植</span>
+  <h2>Ⅱ 级推荐新增：覆盖口服方案与真实世界可操作性</h2>
+  <div class="highlight-box">
+    <strong>📌 2026 版新增 Ⅱ 级推荐方案：</strong>
+    <ul class="bullet-list" style="margin-top:10px">
+      <li><strong>伊沙佐米 + 来那度胺 + 地塞米松</strong>（全口服方案）</li>
+      <li><strong>硼替佐米 + 泊马度胺 + 地塞米松</strong>（Ⅰ 级推荐补充）</li>
+    </ul>
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🎯 替代选择</h3>
+      <p>这些方案的加入是为存在<strong>特定用药限制、合并症、经济可及性或治疗偏好</strong>的患者提供替代选择（<em>TOURMALINE-MM2</em> 研究显示）</p>
+    </div>
+    <div class="card blue">
+      <h3>💊 口服便利</h3>
+      <p>其中，<strong>口服蛋白酶体抑制剂</strong>相关方案也体现出指南对长期管理便利性和依从性的关注</p>
+    </div>
+    <div class="card accent">
+      <h3>🌍 真实世界</h3>
+      <p>从实践角度看，2026 版较 2025 版在努力<strong>完善边缘情境下的真实世界可操作性</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- TOURMALINE-MM2 -->
+<div class="slide">
+  <span class="slide-num">3.6 · 适合移植</span>
+  <h2>TOURMALINE-MM2：全口服 IRd 方案的循证与定位</h2>
+  <div class="research-box">
+    <h5>研究设计（N=701，Ⅲ 期双盲）</h5>
+    <p><strong>入组标准：</strong>年龄 ≥18 岁，符合 NDMM 诊断，可接受来那度胺 / 地塞米松，≥65 岁或 <65 岁体能较差<br>
+    <strong>随机化 1:1 →</strong> Ixa+Len+Dex（IRd）vs 安慰剂+Len+Dex（Pbo-Rd），28 天 / 疗程，至 PD 或不耐受</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>疗效指标</th><th>IRd (n=351)</th><th>Pbo-Rd (n=354)</th><th>OR (95% CI)</th><th>P 值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>≥VGPR, %</td><td><strong>63.0</strong></td><td>47.7</td><td>1.87 (1.38, 2.53)</td><td><0.001</td></tr>
+      <tr><td>CR/sCR, %</td><td><strong>25.6</strong></td><td>14.1</td><td>2.10 (1.43, 3.09)</td><td><0.001</td></tr>
+      <tr><td>中位缓解持续时间（月）</td><td><strong>50.6</strong></td><td>37.5</td><td>—</td><td>—</td></tr>
+      <tr><td>中位 PFS（月）</td><td>35.3</td><td>21.8</td><td>HR 0.83</td><td>0.073</td></tr>
+    </tbody>
+  </table>
+  <div class="warning-box">
+    <strong>⚖️ Ⅱ 类推荐临床意义：</strong>对于适合 ASCT 的 NDMM 患者，如因<strong>依从性、生活方式或其他因素倾向于全口服治疗方案</strong>，可考虑以伊沙佐米替代注射型蛋白酶体抑制剂。
+    <br><br>
+    IRd 方案 ≥VGPR 率 63.0%（vs 47.7%），CR/sCR 率 25.6%（vs 14.1%），中位缓解持续时间 50.6 个月。临床应用时应在<strong>便利性与循证获益之间进行审慎权衡</strong>。
+  </div>
+</div>
+
+<!-- 移植决策逻辑 -->
+<div class="slide">
+  <span class="slide-num">3.7 · 适合移植</span>
+  <h2>移植决策逻辑深化：方案不变，思考升级</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>📋 动员方案（对比 25 版无变化）</h4>
+      <ul class="bullet-list">
+        <li><strong>Ⅰ 级推荐：</strong>依托泊苷 + G-CSF（1 类）、环磷酰胺 + G-CSF（1A 类）、G-CSF + 普乐沙福（1 类）</li>
+        <li><strong>Ⅱ 级推荐：</strong>G-CSF（2A 类）、环磷酰胺 + G-CSF + 普乐沙福（2 类）</li>
+      </ul>
+      <h4 style="margin-top:18px">🏥 移植方案</h4>
+      <ul class="bullet-list">
+        <li><strong>新诊断 MM：</strong>ASCT（1A 类）；预处理：美法仑 200 mg/m²（1A 类）</li>
+        <li><strong>串联移植：</strong>第 1 次未取得 VGPR 或高危患者（2B 类）</li>
+        <li><strong>复发/难治 MM：</strong>挽救性自体移植（既往移植有效且缓解期超 2-3 年）</li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>💭 讨论模块深化思考（决策逻辑）</h4>
+      <div class="content-block" style="background:#fff;margin:12px 0;border-left-color:#2e7dd7">
+        <p><strong>Q1：</strong>四药 / 免疫时代，自体移植的绝对价值还在吗？</p>
+      </div>
+      <div class="content-block" style="background:#fff;margin:12px 0;border-left-color:#2e7dd7">
+        <p><strong>Q2：</strong>早期移植与延迟移植如何选择？</p>
+      </div>
+      <div class="content-block" style="background:#fff;margin:12px 0;border-left-color:#2e7dd7">
+        <p><strong>Q3：</strong>高危患者行串联移植的具体指征是什么？</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-quote">指南更关注"移植的决策逻辑"，而不只是"移植怎么做"——移植价值需放在全病程治疗策略中综合评估</div>
+</div>
+
+<!-- 维持治疗理念升级 -->
+<div class="slide">
+  <span class="slide-num">3.8 · 适合移植</span>
+  <h2>维持治疗理念升级：从单药短期到多药长期风险适配</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐</th><th>Ⅱ 级推荐</th><th>Ⅲ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • 来那度胺（1 类）<br>
+          • <strong>达雷妥尤单抗 + 来那度胺（1 类）</strong><br>
+          • 卡非佐米 + 来那度胺（1 类）<br>
+          • 伊沙佐米 + 来那度胺（2A 类）
+        </td>
+        <td>
+          • 伊沙佐米<br>
+          • 卡非佐米<br>
+          • 硼替佐米 ± 来那度胺<br>
+          • 达雷妥尤单抗（2A 类）<br>
+          • 泊马度胺（2A 类）
+        </td>
+        <td>• 沙利度胺</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🟢 标危患者</h3>
+      <p>兼顾<strong>长期生存获益与药物耐受性</strong>（CALGB 100104 及 IFM 2005-02）</p>
+    </div>
+    <div class="card accent">
+      <h3>🔴 高危患者</h3>
+      <p>倾向<strong>双药或三药持续维持</strong>（如持续至疾病进展）<br>FORTE 研究、GRIFFIN 及 PERSEUS 研究</p>
+    </div>
+  </div>
+  <div class="flow" style="margin-top:24px">
+    <div class="flow-step"><h4>来那度胺单药</h4></div>
+    <div class="flow-step highlight"><h4>CD38 单抗 + 来那度胺</h4></div>
+    <div class="flow-step"><h4>卡非佐米 / 伊沙佐米联合方案</h4></div>
+    <div class="flow-step highlight"><h4>持续至进展</h4></div>
+  </div>
+</div>
+
+<!-- 来那度胺维持 III 期研究 -->
+<div class="slide">
+  <span class="slide-num">3.9 · 适合移植</span>
+  <h2>来那度胺维持：三项 Ⅲ 期研究奠定 Ⅰ 类推荐基石</h2>
+  <div class="cards-3">
+    <div class="card">
+      <h3>CALGB 100104</h3>
+      <p style="color:#1e5aa6;font-size:13px;margin-bottom:10px">2005.8–2009.11</p>
+      <ul class="bullet-list">
+        <li>诱导治疗 + ASCT</li>
+        <li>1:1 随机（N=460）</li>
+        <li>安慰剂（229）vs 来那度胺（231）</li>
+        <li>中期分析后允许交叉治疗</li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>IFM 2005-02</h3>
+      <p style="color:#1e5aa6;font-size:13px;margin-bottom:10px">2006.6–2008.8</p>
+      <ul class="bullet-list">
+        <li>诱导治疗 + ASCT</li>
+        <li>来那度胺 2 疗程后随机 1:1（N=614）</li>
+        <li>安慰剂（307）vs 来那度胺（307）</li>
+        <li>2011 年 1 月所有治疗终止</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>GIMEMA (RV-MM-PI-209)</h3>
+      <p style="color:#1e5aa6;font-size:13px;margin-bottom:10px">2007.11–2009.7</p>
+      <ul class="bullet-list">
+        <li>2×2 设计；Rd×4 诱导</li>
+        <li>ASCT vs MPR 6 疗程</li>
+        <li>无治疗 vs 来那度胺维持</li>
+        <li>初步分析后继续治疗</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight-box">
+    <strong>📈 三项研究共同奠定来那度胺维持治疗的 Ⅰ 类推荐地位</strong>
+  </div>
+</div>
+
+<!-- 来那度胺维持 Meta 分析 -->
+<div class="slide">
+  <span class="slide-num">3.10 · 适合移植</span>
+  <h2>来那度胺维持荟萃分析：PFS 翻倍，OS 降低 25% 死亡风险</h2>
+  <div class="stats-row">
+    <div class="stat"><div class="num">52.8 月</div><div class="label">R 维持组<br>中位 PFS</div></div>
+    <div class="stat"><div class="num accent">23.5 月</div><div class="label">安慰剂组<br>中位 PFS</div></div>
+    <div class="stat"><div class="num gold">HR 0.48</div><div class="label">PFS 风险比<br>(0.41–0.55)</div></div>
+    <div class="stat"><div class="num">HR 0.75</div><div class="label">OS 风险比<br>死亡风险↓25%</div></div>
+  </div>
+  <div class="highlight-box">
+    <strong>🎯 Myeloma XI 研究：</strong>HRMM 也可从 R 维持中获益 —— 按细胞遗传学风险分层的 PFS 分析
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🟢 标准风险</h3>
+      <p>来那度胺 vs 观察<br><strong style="color:#27ae60">PFS 获益显著 ✓</strong><br><span style="font-size:13px;color:#7a8ca3">不存在任何高危异常</span></p>
+    </div>
+    <div class="card blue">
+      <h3>🟡 高风险</h3>
+      <p>来那度胺 vs 观察<br><strong style="color:#27ae60">PFS 获益显著 ✓</strong><br><span style="font-size:13px;color:#7a8ca3">存在任一项高危异常</span></p>
+    </div>
+    <div class="card accent">
+      <h3>🔴 超高风险</h3>
+      <p>来那度胺 vs 观察<br><strong style="color:#27ae60">PFS 获益显著 ✓</strong><br><span style="font-size:13px;color:#7a8ca3">存在 >1 项异常</span></p>
+    </div>
+  </div>
+  <div class="small-note">高风险定义：t(4;14)、t(14;16)、t(14;20)、del(17p) 或 gain 1q 中存在任一项；维持建议 ASCT 后 3-4 月启动</div>
+</div>
+
+<!-- FORTE 研究 -->
+<div class="slide">
+  <span class="slide-num">3.11 · 适合移植</span>
+  <h2>FORTE 研究：KR 维持风险降 36%，高危亚组获益更著</h2>
+  <div class="research-box">
+    <h5>维持治疗设计（二次随机化）</h5>
+    <p>移植后患者 N=356 → R2 随机 → <strong>KR 组：</strong>卡非佐米 ×2yr + 来那度胺（n=178）vs <strong>R 组：</strong>来那度胺单药（n=178）<br>
+    <strong>主要终点：</strong>PFS · 中位随访 37 月</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">HR 0.64</div><div class="label">整体 PFS<br>风险降 36%</div></div>
+    <div class="stat"><div class="num accent">P=0.023</div><div class="label">统计学显著</div></div>
+    <div class="stat"><div class="num gold">68% vs 56%</div><div class="label">高风险亚组<br>3 年 PFS</div></div>
+    <div class="stat"><div class="num">67% vs 42%</div><div class="label">Double Hit<br>3 年 PFS</div></div>
+  </div>
+  <div class="bar-chart">
+    <div class="bar-item">
+      <div class="bar-label"><span>标准风险（n=120）KR vs R</span><span>80% vs 73%</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:80%">KR 80%</div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span>高风险（n=172）KR vs R</span><span>68% vs 56%</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:68%">KR 68%</div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span>Double Hit（n=105）KR vs R</span><span>67% vs 42%</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:67%">KR 67%</div></div>
+    </div>
+  </div>
+  <div class="key-quote">对于伴高危细胞遗传学异常的患者，强化联合维持策略显示出更优前景 —— 支持卡非佐米维持 Ⅰ 类推荐</div>
+</div>
+
+<!-- PERSEUS/GRIFFIN -->
+<div class="slide">
+  <span class="slide-num">3.12 · 适合移植</span>
+  <h2>PERSEUS/GRIFFIN：CD38 单抗联合维持，MRD 转阴率翻倍</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>📊 PERSEUS 研究 · 维持期间 D-R vs R</h4>
+      <div class="bar-chart">
+        <div class="bar-item">
+          <div class="bar-label"><span>MRD 阳→阴转化率（10⁻⁵）</span><span>60.2% vs 40.5% · P=.0049</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:60.2%">60.2%</div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>MRD 阳→阴转化率（10⁻⁶）</span><span>56.7% vs 25.2% · P<.0001</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:56.7%">56.7%</div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>持续 MRD 阴性率（10⁻⁵）</span><span>38.6% vs 17.4% · P=.0006</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:38.6%">38.6%</div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>持续 MRD 阴性率（10⁻⁶）</span><span>31.3% vs 10.3% · P<.0001</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:31.3%">31.3%</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-box right">
+      <h4>📊 GRIFFIN 研究（N=207）· D-RVd vs RVd</h4>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr)">
+        <div class="stat"><div class="num">89.0%</div><div class="label">D-RVd 组<br>3 年 PFS</div></div>
+        <div class="stat"><div class="num accent">87.2%</div><div class="label">D-RVd 组<br>4 年 PFS</div></div>
+      </div>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr)">
+        <div class="stat"><div class="num gold">80.7%</div><div class="label">RVd 组<br>3 年 PFS</div></div>
+        <div class="stat"><div class="num">70.0%</div><div class="label">RVd 组<br>4 年 PFS</div></div>
+      </div>
+      <div class="highlight-box" style="margin-top:10px">
+        <strong>HR 0.45</strong> (95% CI: 0.21-0.95; P = .0324)
+      </div>
+    </div>
+  </div>
+  <div class="key-quote">标准维持基础上联合 CD38 单抗可显著加深缓解、提高 MRD 阴性率，改善 PFS</div>
+</div>
+
+<!-- 适合移植小结 -->
+<div class="slide">
+  <span class="slide-num">3.13 · 适合移植</span>
+  <h2>适合移植 NDMM 小结：前线四药化、移植核心化、维持积极化</h2>
+  <div class="cards-3">
+    <div class="card">
+      <div class="icon-num">1</div>
+      <h3>前线四药主流化</h3>
+      <p>诱导期前置 <strong>CD38 单抗联合四药方案</strong>，确立<strong>极限深缓解目标</strong></p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">2</div>
+      <h3>核心地位稳固</h3>
+      <p><strong>自体移植（ASCT）</strong>手段不可替代，是提高 <strong>MRD 阴性率</strong>的关键中枢</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">3</div>
+      <h3>维持策略积极化</h3>
+      <p>打破单药短期维持惯性，高危群体转向<strong>多药长期、风险适配策略</strong></p>
+    </div>
+  </div>
+  <div class="key-quote">适合移植人群的治疗目标更加明确：尽早获得深缓解、尽可能实现 MRD 阴性，并通过巩固和维持延长缓解持续时间</div>
+</div>
+
+<!-- ============ 第四章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">04</div>
+  <h1>不适合移植 NDMM</h1>
+  <div class="sec-sub">打破年龄标签 · 拥抱体能分层 · 三级管理新范式</div>
+</div>
+
+<!-- 核心变革 -->
+<div class="slide">
+  <span class="slide-num">4.1 · 不适合移植</span>
+  <h2>核心变革：从"年龄分层"到"体能适配"三级管理</h2>
+  <div class="highlight-box">
+    <strong>🎯 核心变化：</strong>摒弃单一的"年龄标签化"转向基于<strong>真实体能状态与合并症负担</strong>的精细分层
+  </div>
+  <div class="pyramid">
+    <div class="pyr-level pyr-1">🟦 体能良好 Fit · 强化治疗，方案强度向移植人群看齐</div>
+    <div class="pyr-level pyr-2">🟦 体能一般 Intermediate · 平衡疗效，追求去激素化与可持续化</div>
+    <div class="pyr-level pyr-3">🟦 衰弱人群 Frail · 实用主导，减量降阶，适度保留免疫空间</div>
+  </div>
+  <div class="warning-box">
+    <strong>📊 整体趋势：</strong>分层更细致、方案更丰富、<strong>CD38 单抗应用场景全面拓宽</strong>
+  </div>
+  <div class="key-quote">摒弃单纯的"年龄标签化"，转向基于体能与并发症的综合适能动态决策</div>
+</div>
+
+<!-- 体能良好者 -->
+<div class="slide">
+  <span class="slide-num">4.2 · 不适合移植</span>
+  <h2>体能良好者：非移植 ≠ 降阶，四药强化方案正式纳入</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐（标准三药或四药方案）</th><th>Ⅱ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • 达雷妥尤单抗 + 来那度胺 + 地塞米松<br>
+          • <strong style="color:#c0392b">艾沙妥昔单抗 + 硼替佐米 + 来那度胺 + 地塞米松</strong> <span class="badge new">NEW</span><br>
+          • <strong style="color:#c0392b">达雷妥尤单抗 + 硼替佐米 + 来那度胺 + 地塞米松</strong> <span class="badge new">NEW</span><br>
+          • 艾沙妥昔单抗 + 来那度胺 + 地塞米松<br>
+          • 硼替佐米 + 来那度胺 + 地塞米松<br>
+          • 卡非佐米 + 来那度胺 + 地塞米松<br>
+          • 达雷妥尤单抗 + 硼替佐米 + 美法仑 + 泼尼松
+        </td>
+        <td>
+          • 伊沙佐米 + 来那度胺 + 地塞米松<br>
+          • 硼替佐米 + 环磷酰胺 + 地塞米松 ± 达雷妥尤单抗<br>
+          • 卡非佐米 + 环磷酰胺 + 地塞米松
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🆕 2026 新增</h3>
+      <p>强化方案推荐 <strong>Dara-VRd、Isa-VRd</strong>（CEPHEUS 研究、IMROZ 研究）</p>
+    </div>
+    <div class="card blue">
+      <h3>⚡ 治疗上限突破</h3>
+      <p>非移植 ≠ "降阶治疗"，<strong>体能允许应追求高强度控制</strong>以延缓复发</p>
+    </div>
+    <div class="card accent">
+      <h3>🔍 决策依据</h3>
+      <p>基于全面的<strong>老年综合评估（CGA）</strong>和并发症评估，而非单一的年龄门槛</p>
+    </div>
+  </div>
+</div>
+
+<!-- IMROZ + CEPHEUS -->
+<div class="slide">
+  <span class="slide-num">4.3 · 不适合移植</span>
+  <h2>IMROZ + CEPHEUS：两项 Ⅲ 期研究确立四药方案地位</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>🔬 IMROZ 研究（Ⅲ 期 · 3:2 · N=446）</h4>
+      <p style="font-size:14px;margin:10px 0">NDMM → Isa-VRd (n=265) vs VRd (n=181)<br>诱导 C1-4（6w/周期）→ 维持 C5+（4w/周期）</p>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr);margin:12px 0">
+        <div class="stat"><div class="num">63.2%</div><div class="label">Isa-VRd 60m PFS<br>（已知最高）</div></div>
+        <div class="stat"><div class="num accent">HR 0.60</div><div class="label">P<0.001<br>风险降 40%</div></div>
+      </div>
+      <p style="font-size:14px;color:#2c3e56">VRd 组 60m PFS 率 45.2%，中位随访 59.7 月</p>
+    </div>
+    <div class="col-box right">
+      <h4>🔬 CEPHEUS 研究（Ⅲ 期 · N=395）</h4>
+      <p style="font-size:14px;margin:10px 0">NDMM 不适合移植 ECOG 0-2 → D-VRd (n=197) vs VRd (n=198)<br>C1-8：21天/周期；C9+：28天/周期</p>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr);margin:12px 0">
+        <div class="stat"><div class="num">68.1%</div><div class="label">D-VRd 54m PFS 率<br>vs 49.5%</div></div>
+        <div class="stat"><div class="num accent">HR 0.57</div><div class="label">P=0.0005<br>风险降 43%</div></div>
+      </div>
+      <p style="font-size:14px;color:#2c3e56">D-VRd 中位 PFS 未达到 vs 52.6m；各亚组获益一致</p>
+    </div>
+  </div>
+  <div class="key-quote">两项研究均证实四药方案可显著改善 PFS，确立 Ⅰ 类推荐地位</div>
+</div>
+
+<!-- 体能一般者 -->
+<div class="slide">
+  <span class="slide-num">4.4 · 不适合移植</span>
+  <h2>体能一般者：去激素化与长期慢病管理的平衡艺术</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐（减量三药或两药联合方案）</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • <strong style="color:#c0392b">达雷妥尤单抗 + 来那度胺</strong> <span class="badge new">NEW</span><br>
+          • 达雷妥尤单抗 + 来那度胺 + 地塞米松<br>
+          • <strong style="color:#c0392b">艾沙妥昔单抗 + 来那度胺 + 地塞米松</strong> <span class="badge new">NEW</span><br>
+          • 硼替佐米 + 来那度胺 + 地塞米松<br>
+          • 伊沙佐米 + 来那度胺 + 地塞米松<br>
+          • 硼替佐米 + 环磷酰胺 + 地塞米松
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🎯 核心策略</h3>
+      <p><strong>去激素化</strong>与<strong>长期慢病管理</strong></p>
+    </div>
+    <div class="card blue">
+      <h3>💊 方案更新</h3>
+      <p><strong>Dara-R</strong>（减少激素暴露）、<strong>Isa-Rd</strong>（BENEFIT 研究）</p>
+    </div>
+    <div class="card accent">
+      <h3>🏥 临床痛点解决</h3>
+      <p>对于合并症多、大剂量激素不耐受患者：<strong>降低感染、高血糖、肌无力</strong>等副作用，提高长期依从性</p>
+    </div>
+  </div>
+  <div class="key-quote">方案设计注重平衡疗效与毒性，践行"去激素化"与长期可持续的慢病管理理念</div>
+</div>
+
+<!-- IFM2017-03 -->
+<div class="slide">
+  <span class="slide-num">4.5 · 不适合移植</span>
+  <h2>IFM2017-03：Dara-R 方案仅 2 周期激素，疗效更优</h2>
+  <div class="research-box">
+    <h5>研究设计（Ⅲ 期 · RCT · 1:2）</h5>
+    <p><strong>入组：</strong>NDMM ≥65 岁 · IM 级 · 不适合移植 · ISS I-III<br>
+    <strong>A 组 Rd（标准）：</strong>Len 25mg d1-21 + Dex d1,8,15,22 · 28 天<br>
+    <strong>B 组 DR（达雷妥尤单抗+R）：</strong>Dara SC + Len 25mg d1-21，<strong style="color:#c0392b">仅 C1-2 含低剂量 Dex (20mg/周)</strong></p>
+  </div>
+  <div class="highlight-box">
+    <strong>💡 核心创新：</strong>DR 组<strong>仅前 2 周期使用 Dex</strong> → 显著减少糖皮质激素暴露
+  </div>
+  <table>
+    <thead>
+      <tr><th>12 个月中期分析</th><th>A 组 Rd</th><th>B 组 DR</th><th>P 值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ORR (%)</td><td>77</td><td><strong>89</strong></td><td>0.025</td></tr>
+      <tr><td>12 月 VGPR (%)</td><td>42</td><td><strong>58</strong></td><td>0.013</td></tr>
+      <tr><td>达到 VGPR 时间（月）</td><td>11</td><td><strong>5</strong></td><td>—</td></tr>
+      <tr><td>≥3 级 AE (%)</td><td>76</td><td><strong>64</strong></td><td>0.052</td></tr>
+      <tr><td>≥3 级感染 (%)</td><td>17</td><td>13</td><td>0.38</td></tr>
+    </tbody>
+  </table>
+  <div class="key-quote">DR 方案（仅 2 周期 Dex）显著优于标准 Rd，减少糖皮质激素暴露的同时提升疗效，实现更优风险-获益平衡</div>
+</div>
+
+<!-- BENEFIT 研究 -->
+<div class="slide">
+  <span class="slide-num">4.6 · 不适合移植</span>
+  <h2>BENEFIT：Isa-VRd vs Isa-Rd，MRD 深度与耐受性的选择</h2>
+  <div class="research-box">
+    <h5>研究设计（N=270 · RCT · 1:1）</h5>
+    <p><strong>入组：</strong>NDMM 65-79 岁 · 非虚弱 · 不适合移植 · ECOG PS≤2<br>
+    <strong>Isa-VRd (n=135)：</strong>Isa+V+Rd · C1-12 → Isa+V+R · C13-18 → Isa+R · C19+<br>
+    <strong>Isa-Rd (n=135)：</strong>Isa+Rd · C1-12 → Isa+R · C13-18 → Isa+R · C19+<br>
+    <strong>主要终点：</strong>12 个月 MRD 阴性率（NGS, 10⁻⁵, ITT 人群）</p>
+  </div>
+  <div class="bar-chart">
+    <div class="bar-item">
+      <div class="bar-label"><span>12 月 MRD 阴性率（10⁻⁵）</span><span><strong>Isa-VRd 51% vs Isa-Rd 21%</strong> · OR=3.86 · P<0.0001</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:51%">51%</div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span>18 月 MRD 阴性率（10⁻⁵）</span><span><strong>Isa-VRd 53% vs Isa-Rd 26%</strong> · OR=3.16 · P<0.0001</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:53%">53%</div></div>
+    </div>
+  </div>
+  <div class="stats-2">
+    <div class="stat"><div class="num">81.1%</div><div class="label">Isa-VRd 24 月 PFS 率</div></div>
+    <div class="stat"><div class="num accent">81.5%</div><div class="label">Isa-Rd 24 月 PFS 率</div></div>
+  </div>
+  <div class="warning-box">
+    <strong>⚖️ 临床决策：</strong>对于合并<strong>周围神经病变</strong>的患者，去除硼替佐米的 Isa-Rd 方案可显著降低 ≥3 级不良事件发生率，且 24 个月 PFS 率仍可达 ~80%，在确保长期疾病控制的同时明显<strong>改善治疗耐受性</strong>
+  </div>
+</div>
+
+<!-- 衰弱人群 -->
+<div class="slide">
+  <span class="slide-num">4.7 · 不适合移植</span>
+  <h2>衰弱人群：安全优先，保留免疫治疗的微小窗口</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐（减量的两药方案或最佳支持治疗）</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • 来那度胺 + 地塞米松 ± <strong>CD38 单克隆抗体</strong><br>
+          • 伊沙佐米 + 地塞米松 ± <strong>CD38 单克隆抗体</strong><br>
+          • 硼替佐米 + 地塞米松 ± <strong>CD38 单克隆抗体</strong><br>
+          • 硼替佐米 + 环磷酰胺 + 地塞米松 + 达雷妥尤单抗<br>
+          • <strong>硼替佐米 + 来那度胺 + 地塞米松（VRd-lite）</strong> <span class="badge new">NEW</span><br>
+          • 来那度胺 + 环磷酰胺 + 地塞米松
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🆕 2026 新增 / 强化</h3>
+      <p><strong>VRd-lite</strong>（RV-MM-PI-0752）<br><strong>RCd</strong>（Myeloma XI）<br><strong>VCd ± Dara</strong>（EVOLUTION）</p>
+    </div>
+    <div class="card blue">
+      <h3>🎯 核心目标</h3>
+      <p>确保安全性，<strong>降低神经毒性与骨髓抑制</strong>，兼顾适度抗瘤效果</p>
+    </div>
+    <div class="card accent">
+      <h3>💡 关键启示</h3>
+      <p>"± CD38 单抗"模式表明：即便极度衰弱，通过精确剂量调整，<strong>依然保留拥抱前沿免疫治疗的微小空间</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- RV-MM-PI-0752 -->
+<div class="slide">
+  <span class="slide-num">4.8 · 不适合移植</span>
+  <h2>RV-MM-PI-0752：VRd-lite 在虚弱患者中 ORR 90%</h2>
+  <div class="research-box">
+    <h5>研究设计（N=50 · 单臂 · Ⅱ 期）</h5>
+    <p><strong>诱导（9×35 天周期）RVd-lite：</strong>R 15mg d1-21 + V 1.3mg/m² SC 每周 + Dex 20mg<br>
+    <strong>巩固（6×28 天周期）RV：</strong>R 15mg d1-21 + V 1.3mg/m² SC d1,15<br>
+    <strong>维持 R²：</strong>来那度胺至 PD 或不可耐受</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">90%</div><div class="label">ORR（≥PR）</div></div>
+    <div class="stat"><div class="num accent">53.3%</div><div class="label">≥VGPR 率</div></div>
+    <div class="stat"><div class="num gold">35.1 月</div><div class="label">中位 PFS</div></div>
+    <div class="stat"><div class="num">未达到</div><div class="label">中位 OS</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>疗效指标（4 周期后, n=30）</th><th>RVd-Lite</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ORR (≥ PR)</td><td><strong>27 (90.0%)</strong></td></tr>
+      <tr><td>CR</td><td>5 (16.7%)</td></tr>
+      <tr><td>VGPR</td><td>11 (36.7%)</td></tr>
+      <tr><td>PR</td><td>11 (36.7%)</td></tr>
+      <tr><td>SD</td><td>3 (10.0%)</td></tr>
+    </tbody>
+  </table>
+  <div class="key-quote">VRd-lite 在 RV-MM-PI-0752 研究中为虚弱 NDMM 患者提供了优异疗效与良好耐受性</div>
+</div>
+
+<!-- Myeloma XI -->
+<div class="slide">
+  <span class="slide-num">4.9 · 不适合移植</span>
+  <h2>Myeloma XI：RCd 方案显著改善 PFS，列为 2A 类推荐</h2>
+  <div class="research-box">
+    <h5>研究设计（N=583 · NDMM）</h5>
+    <p><strong>诱导：</strong>CRD（CTX+Len+Dex）或 CTD（CTX+Thal+Dex）→ Max response<br>
+    <strong>PR/MR 者随机：</strong>CVD（Bort+CTX+Dex）（n=289）vs No further induction（n=294）<br>
+    <strong>非移植亚组：</strong>CVD（n=106）vs No CVD（n=110）</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">20 月</div><div class="label">CVD 组<br>中位 PFS</div></div>
+    <div class="stat"><div class="num accent">8 月</div><div class="label">No CVD 组<br>中位 PFS</div></div>
+    <div class="stat"><div class="num gold">HR 0.72</div><div class="label">PFS 风险比<br>(P=0.0525)</div></div>
+    <div class="stat"><div class="num">72.8%</div><div class="label">3 年 OS<br>No CVD 组</div></div>
+  </div>
+  <div class="key-quote">RCd（来那度胺/环磷酰胺/地塞米松）在 Myeloma XI 研究中显著改善 PFS，被列为 CSCO 2A 类推荐方案</div>
+</div>
+
+<!-- EVOLUTION -->
+<div class="slide">
+  <span class="slide-num">4.10 · 不适合移植</span>
+  <h2>EVOLUTION 研究：VDC-mod 方案 1 年 PFS 率 100%，停药率仅 6%</h2>
+  <div class="research-box">
+    <h5>研究设计（NDMM · 1:1 随机）</h5>
+    <p><strong>VDR：</strong>Bort + Dex + Len | <strong>VDCR：</strong>Bort + Dex + CTX + Len | <strong>VDC：</strong>Bort + Dex + CTX | <strong>VDC-mod：</strong>优化剂量方案<br>
+    Bortezomib × 24 weeks</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>方案</th><th>≥VGPR<br>(4 周期)</th><th>CR<br>(4 周期)</th><th>1-y PFS</th><th>≥3 级 AE</th><th>≥3 级血液学 AE</th><th>AE 致停药率</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>VDCR</td><td>33%</td><td>5%</td><td>86%</td><td>83%</td><td>58%</td><td>21%</td></tr>
+      <tr><td>VDR</td><td>32%</td><td>7%</td><td>83%</td><td>76%</td><td>26%</td><td>19%</td></tr>
+      <tr><td>VDC</td><td>13%</td><td>3%</td><td>93%</td><td>79%</td><td>52%</td><td>12%</td></tr>
+      <tr style="background:#fff3d6"><td><strong>VDC-mod</strong></td><td><strong>41%</strong></td><td><strong>12%</strong></td><td><strong>100%</strong></td><td>88%</td><td>29%</td><td><strong>6%</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="cards-2">
+    <div class="card">
+      <h3>✨ VDC-mod 优势</h3>
+      <ul class="bullet-list">
+        <li>1-y PFS 达 <strong>100%</strong>，四组中最优</li>
+        <li>≥VGPR 率 <strong>41%</strong>，CR 率 <strong>12%</strong></li>
+        <li>AE 导致停药率仅 <strong>6%</strong>，耐受性最佳</li>
+        <li>不含来那度胺，适合肾功能不全患者</li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>🔑 关键发现</h3>
+      <ul class="bullet-list">
+        <li>VDC-mod 疗效和耐受性均为最优</li>
+        <li>VDC 方案不含来那度胺，<strong>避免肾功能不全患者蓄积风险</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- D-VCd -->
+<div class="slide">
+  <span class="slide-num">4.11 · 不适合移植</span>
+  <h2>D-VCd 方案：肾损伤 + 虚弱患者的优选四药治疗路径</h2>
+  <div class="flow" style="margin-bottom:20px">
+    <div class="flow-step"><h4>新诊断 MM<br>不适合移植</h4></div>
+    <div class="flow-step"><h4>IMWG Frailty<br>评分+肾功能评估</h4></div>
+    <div class="flow-step highlight"><h4>Frail 和/或<br>eGFR<30 / 骨髓瘤肾病</h4></div>
+    <div class="flow-step"><h4>选适<br>Dara-VCd</h4></div>
+  </div>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>💊 推荐剂量（Frail 调整）</h4>
+      <ul class="bullet-list">
+        <li><strong>Dara</strong> 1800 mg SC Q1-2W → Q4W</li>
+        <li><strong>Bort</strong> 1.3 mg/m² SC QW（D1, 8, 15）</li>
+        <li><strong>CTX</strong> 150-300 mg/m² PO QW</li>
+        <li><strong>Dex</strong> 20 mg PO QW</li>
+        <li>21-28 天/周期</li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>🌟 Dara-VCd 场景优势</h4>
+      <ul class="bullet-list">
+        <li>四药均<strong>不依赖肾脏排泄</strong>，肾损伤患者安全可用</li>
+        <li>Dara SC 给药方便（仅需 5 min 皮下注射）</li>
+        <li>FLC <strong>72h 内快速下降</strong>，早期肾功能保护</li>
+        <li>CTX 口服，门诊可行，减少住院</li>
+        <li>无来那度胺蓄积累积风险</li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">D-VCd 对于合并急性肾损伤 / 管型肾病、需要快速降低 FLC 的虚弱老年患者的优选治疗</div>
+</div>
+
+<!-- 不适合移植小结 -->
+<div class="slide">
+  <span class="slide-num">4.12 · 不适合移植</span>
+  <h2>不适合移植 NDMM 小结：三级体能、三种策略、一个理念</h2>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🟢 良好 Fit · 类移植强化</h3>
+      <p style="color:#1e5aa6;font-weight:700;margin-bottom:8px">目标：极限深缓解</p>
+      <ul class="bullet-list">
+        <li>方案特征：前置四药</li>
+        <li>代表方案：<strong>Dara-VRd / Isa-VRd</strong></li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>🟡 一般 Intermediate · 简化去激素</h3>
+      <p style="color:#1e5aa6;font-weight:700;margin-bottom:8px">目标：疗效与生活质量双赢</p>
+      <ul class="bullet-list">
+        <li>方案特征：两/三药减激素</li>
+        <li>代表方案：<strong>Dara-R / Isa-Rd</strong></li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>🔴 衰弱 Frail · 减量保安全</h3>
+      <p style="color:#1e5aa6;font-weight:700;margin-bottom:8px">目标：控制毒性与真实世界实用</p>
+      <ul class="bullet-list">
+        <li>方案特征：Lite 方案及有限免疫整合</li>
+        <li>代表方案：<strong>VRd-lite / ±Dara</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">"非移植"不再代表低效保守，而是根据患者功能状态定制的最优化贴近真实的个体化策略</div>
+</div>
+
+<!-- ============ 第五章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">05</div>
+  <h1>复发 / 难治 MM</h1>
+  <div class="sec-sub">免疫前移 · 多靶点序贯 · 从药物轮换到机制切换</div>
+</div>
+
+<!-- RRMM 六大要点 -->
+<div class="slide">
+  <span class="slide-num">5.1 · RRMM</span>
+  <h2>RRMM 更新六大要点：本版最值得关注的章节</h2>
+  <div class="cards-3">
+    <div class="card">
+      <div class="icon-num">1</div>
+      <h3>最值得关注</h3>
+      <p>2026 版在复发/难治 MM 部分的更新，是本次指南修订中<strong>最值得关注的内容之一</strong></p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">2</div>
+      <h3>免疫前移</h3>
+      <p>与 2025 版相比，最大变化是<strong>免疫治疗明显前移</strong>，CAR-T 与双抗不再局限于极后线</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">3</div>
+      <h3>分层推荐</h3>
+      <p>指南对复发治疗的组织方式更清晰，围绕<strong>既往暴露、耐药情况和线次</strong>进行分层推荐</p>
+    </div>
+    <div class="card">
+      <div class="icon-num">4</div>
+      <h3>序贯设计</h3>
+      <p>治疗逻辑不再只是"换一个 PI 或 IMiD 组合"，而是<strong>根据既往治疗史和后续计划进行全程序贯设计</strong></p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">5</div>
+      <h3>多靶点并行</h3>
+      <p>后线治疗靶点从以 <strong>BCMA 为主</strong>，扩展到 <strong>BCMA 与 GPRC5D 并行</strong></p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">6</div>
+      <h3>新时代开启</h3>
+      <p>RRMM 管理已进入"<strong>多靶点免疫治疗 + 序贯整合</strong>"的新时代</p>
+    </div>
+  </div>
+</div>
+
+<!-- 模式转变 -->
+<div class="slide">
+  <span class="slide-num">5.2 · RRMM</span>
+  <h2>模式转变：从"PI/IMiD 轮换"到"多靶点免疫序贯"</h2>
+  <div class="content-block">
+    <h4>📜 传统模式（2025 及以前）</h4>
+    <p>化疗/靶向 → PI/IMiD 轮换 → 无药可用时尝试免疫治疗</p>
+  </div>
+  <div class="content-block" style="border-left-color:#2e7dd7;background:#e8f1fc">
+    <h4>🆕 2026 指南更新模式</h4>
+    <p>化疗/靶向 +免疫 → 化疗/靶向 +免疫 → 化疗/靶向 +免疫 → 化疗/靶向 +免疫</p>
+  </div>
+  <div class="cards-3" style="margin-top:24px">
+    <div class="card">
+      <h3>🚀 免疫治疗前移</h3>
+      <p><strong>CAR-T 与双特异性抗体（BsAb）</strong>不再局限于极后线探索，已正式进入更早线次的正式推荐序列</p>
+    </div>
+    <div class="card blue">
+      <h3>🔄 从"轮换"到"序贯"</h3>
+      <p>治疗逻辑不再局限于传统 PI 或 IMiD 的<strong>同机制轮换</strong>，而是转向根据既往用药史和耐药情况进行<strong>跨机制的全程序贯设计</strong></p>
+    </div>
+    <div class="card accent">
+      <h3>🎯 多靶点并行</h3>
+      <p>后线治疗靶点从单一 BCMA 扩展至 <strong>BCMA 与 GPRC5D 并行</strong>，多靶点策略成为标准</p>
+    </div>
+  </div>
+  <div class="key-quote">RRMM 治疗正式迈入"多靶点免疫治疗 + 序贯整合"的新时代，前瞻性布局成为核心</div>
+</div>
+
+<!-- 关键转折点 -->
+<div class="slide">
+  <span class="slide-num">5.3 · RRMM</span>
+  <h2>关键转折点：1-3 线失败后，何时切入免疫治疗？</h2>
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-circle">1线</div>
+      <div class="tl-label">初诊治疗</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle" style="background:linear-gradient(135deg,#0d3b66,#1e5aa6);color:#fff">2线</div>
+      <div class="tl-label" style="color:#c0392b">⚡ 节点前置</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle" style="background:linear-gradient(135deg,#0d3b66,#1e5aa6);color:#fff">3线</div>
+      <div class="tl-label" style="color:#c0392b">⚡ 免疫切入</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">4线+</div>
+      <div class="tl-label">后线治疗</div>
+    </div>
+  </div>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🎯 干预时机升级</h3>
+      <p>不再等到患者"无药可用"或进入极度衰竭状态才考虑免疫治疗。<strong>目标重塑：早期介入新型免疫治疗</strong>（参考 CARTITUDE-4 和 KarMMa-3 等研究证据），旨在提高缓解深度（MRD 阴性率）并显著延长持续时间</p>
+    </div>
+    <div class="card blue">
+      <h3>🤝 多学科协作（MDT）</h3>
+      <p>临床科室需在患者<strong>尚未出现高度耐药时</strong>，提早评估 <strong>CAR-T 或双抗的适用性</strong>，把握最佳转诊与细胞采集时机</p>
+    </div>
+  </div>
+  <div class="key-quote">复发治疗的关键从"下一步用什么药"升级为"何时切换至免疫治疗机制"</div>
+</div>
+
+<!-- 来那度胺耐药后 -->
+<div class="slide">
+  <span class="slide-num">5.4 · RRMM</span>
+  <h2>来那度胺耐药后：CAR-T、双抗、新靶点全面进入推荐</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐</th><th>Ⅱ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • 达雷妥尤单抗 + 卡非佐米 + 地塞米松<br>
+          • 艾沙妥昔单抗 + 卡非佐米 + 地塞米松<br>
+          • 达雷妥尤单抗 + 泊马度胺 + 地塞米松<br>
+          • 艾沙妥昔单抗 + 泊马度胺 + 地塞米松<br>
+          • 卡非佐米 + 泊马度胺 + 地塞米松<br>
+          • 达雷妥尤单抗 + 硼替佐米 + 地塞米松<br>
+          • 泊马度胺 + 硼替佐米 + 地塞米松<br>
+          • 埃普奈明 + 硼替佐米 + 地塞米松（2 类）<br>
+          • 埃普奈明 + 卡非佐米 + 地塞米松（2 类）<br>
+          • 玛贝兰妥单抗 + 硼替佐米 + 地塞米松<br>
+          • 玛贝兰妥单抗 + 泊马度胺 + 地塞米松<br>
+          • <strong style="color:#c0392b">BCMA CAR-T 细胞疗法</strong> <span class="badge new">NEW</span><br>
+          • <strong style="color:#c0392b">特立妥单抗 + 达雷妥尤单抗</strong> <span class="badge new">NEW</span>
+        </td>
+        <td>
+          • 伊沙佐米 + 泊马度胺 + 地塞米松<br>
+          • 达雷妥尤单抗 + 伊沙佐米 + 地塞米松<br>
+          • 塞利尼索为基础的化疗<br>
+          • <strong style="color:#c0392b">埃普奈明 + 泊马度胺 + 地塞米松</strong> <span class="badge new">NEW</span><br>
+          • <strong style="color:#c0392b">埃普奈明 + 达雷妥尤单抗 + 地塞米松</strong> <span class="badge new">NEW</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <strong>🎯 核心更新：</strong>主要新增内容包括 <strong>BCMA CAR-T 细胞疗法</strong>（NCCN CARTITUDE-4）、<strong>特立妥单抗 + 达雷妥尤单抗</strong>（MajesTEC-3）、埃普奈明相关联合方案。对于既往多线暴露但整体状态尚可的患者，提早进入 CAR-T 或双抗路径，可能获得更优疾病控制
+  </div>
+  <div class="key-quote">面对来那度胺耐药，应摒弃传统的"药物轮换"，积极考虑跨机制的靶向免疫治疗</div>
+</div>
+
+<!-- PI/CD38 耐药 -->
+<div class="slide">
+  <span class="slide-num">5.5 · RRMM</span>
+  <h2>PI / CD38 单抗耐药：跨机制治疗成为明确方向</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>💊 硼替佐米耐药 Ⅰ 级推荐更新</h4>
+      <ul class="bullet-list">
+        <li>卡非佐米 + 来那度胺 + 地塞米松</li>
+        <li>达雷妥尤单抗 + 泊马度胺 + 地塞米松</li>
+        <li>达雷妥尤单抗 + 卡非佐米 + 地塞米松</li>
+        <li>艾沙妥昔单抗 + 卡非佐米 + 地塞米松</li>
+        <li>卡非佐米 + 泊马度胺 + 地塞米松</li>
+        <li>玛贝兰妥单抗 + 泊马度胺 + 地塞米松</li>
+        <li><strong style="color:#c0392b">BCMA CAR-T 细胞疗法</strong> <span class="badge new">NEW</span></li>
+        <li><strong style="color:#c0392b">特立妥单抗 + 达雷妥尤单抗</strong> <span class="badge new">NEW</span></li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>💊 抗 CD38 单抗耐药 Ⅰ 级推荐更新</h4>
+      <ul class="bullet-list">
+        <li>卡非佐米 + 来那度胺 + 地塞米松</li>
+        <li>卡非佐米 + 泊马度胺 + 地塞米松</li>
+        <li>埃普奈明 + 硼替佐米 + 地塞米松（2 类）</li>
+        <li>埃普奈明 + 卡非佐米 + 地塞米松（2 类）</li>
+        <li>埃普奈明 + 沙利度胺 + 地塞米松（2 类）</li>
+        <li>玛贝兰妥单抗 + 泊马度胺 + 地塞米松</li>
+        <li><strong style="color:#c0392b">伊沙佐米 + 来那度胺 + 地塞米松</strong> <span class="badge new">NEW</span></li>
+        <li><strong style="color:#c0392b">BCMA CAR-T 细胞疗法</strong> <span class="badge new">NEW</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">耐药后的关键不是"加一个旧药"，而是"切换到新机制"—— 指南鼓励尽早引入跨机制治疗</div>
+</div>
+
+<!-- CARTITUDE-4 + KarMMa-3 -->
+<div class="slide">
+  <span class="slide-num">5.6 · RRMM</span>
+  <h2>CARTITUDE-4 + KarMMa-3：CAR-T 正式进入早线复发</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>🔬 CARTITUDE-4</h4>
+      <p style="font-size:14px;margin-bottom:10px">R/R MM，1-3 线治疗后，来那度胺耐药（N=419）<br>Cilta-cel 0.75×10⁶ CAR-T (n=176) vs SoC (n=208)</p>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr);margin:12px 0">
+        <div class="stat"><div class="num">84.6%</div><div class="label">Cilta-cel ORR<br>vs SoC 67.3%</div></div>
+        <div class="stat"><div class="num accent">HR 0.26</div><div class="label">PFS 风险比<br>P<.001</div></div>
+      </div>
+      <ul class="bullet-list" style="font-size:14px">
+        <li>sCR 58.2% · ≥CR 73.1%</li>
+        <li>Cilta-cel 12m PFS 75.9% vs SoC 48.6%</li>
+        <li>MRD⁻ 60.6% vs 15.6%（随访 15.9 月）</li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>🔬 KarMMa-3</h4>
+      <p style="font-size:14px;margin-bottom:10px">R/R MM，2-4 线治疗后，末线耐药（N=381）<br>Ide-cel 150-450×10⁶ CAR-T (n=225) vs SoC (n=132)</p>
+      <div class="stats-row" style="grid-template-columns:repeat(2,1fr);margin:12px 0">
+        <div class="stat"><div class="num">71%</div><div class="label">Ide-cel ORR<br>vs SoC 42%</div></div>
+        <div class="stat"><div class="num accent">HR 0.49</div><div class="label">PFS 风险比</div></div>
+      </div>
+      <ul class="bullet-list" style="font-size:14px">
+        <li>ΔORR 29% · OR 3.36</li>
+        <li>mPFS 13.8m vs 4.4m · mDoR 16.6m vs 9.7m</li>
+        <li>MRD⁻(≥CR) 22% vs 1% · mTTNT 20.9 vs 7.0m</li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">Cilta-cel 与 Ide-cel 均显著优于标准治疗，CAR-T 在早线复发 MM 中获 Ⅰ 类推荐</div>
+</div>
+
+<!-- NCCN 指南变迁 -->
+<div class="slide">
+  <span class="slide-num">5.7 · RRMM</span>
+  <h2>NCCN 指南变迁：BCMA CAR-T 从 5 线到 2 线的四年跨越</h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>📅 NCCN V6.2021</h4>
+      <p style="font-weight:700;color:#c0392b;margin-bottom:10px">BCMA CAR-T 用于 5 线</p>
+      <ul class="bullet-list" style="font-size:14px">
+        <li>Bortezomib/lenalidomide/dex</li>
+        <li>Carfilzomib/lenalidomide/dex (cat 1)</li>
+        <li>Daratumumab/bortezomib/dex (cat 1)</li>
+        <li>Daratumumab/lenalidomide/dex (cat 1)</li>
+        <li>Ixazomib/lenalidomide/dex (cat 1)</li>
+      </ul>
+    </div>
+    <div class="col-box right">
+      <h4>📅 NCCN V2.2025</h4>
+      <p style="font-weight:700;color:#27ae60;margin-bottom:10px">Ⅰ 类推荐 BCMA CAR-T 用于 2 线</p>
+      <ul class="bullet-list" style="font-size:14px">
+        <li>Anti-CD38 Ref / Bortezomib-Ref / Len-Ref</li>
+        <li>Carfilzomib combinations (cat 1)</li>
+        <li>Daratumumab combinations (cat 1)</li>
+        <li>Isatuximab combinations (cat 1)</li>
+        <li>After IMiD + PI: Bispecific antibodies (cat 1)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">60.7 月</div><div class="label">Cilta-cel 中位 OS<br>远超历史对照</div></div>
+    <div class="stat"><div class="num accent">33%</div><div class="label">患者实现 >5 年<br>无药生存</div></div>
+    <div class="stat"><div class="num gold">持续</div><div class="label">MRD 阴性</div></div>
+    <div class="stat"><div class="num">N=97</div><div class="label">总入组患者</div></div>
+  </div>
+  <div class="key-quote">推荐等级大幅前移，反映出强有力的临床证据支持 —— Cilta-cel 5 年随访展现"长尾效应"</div>
+</div>
+
+<!-- MajesTEC-3 -->
+<div class="slide">
+  <span class="slide-num">5.8 · RRMM</span>
+  <h2>MajesTEC-3：Tec-Dara 组合 HR 0.17，3 年 PFS 83.4%</h2>
+  <div class="research-box">
+    <h5>研究设计（N=687）</h5>
+    <p>RRMM 1-3 线既往治疗，含 PI + 免疫调节剂，ECOG PS 0-2<br>
+    <strong>Tec-Dara（n=291）：</strong>Teclistamab + Daratumumab · 自发治疗 71.1% · 停药 29.0%<br>
+    <strong>DPd/DVd（n=296）：</strong>DPd 263 例 (90.7%) / DVd 27 例 (9.3%) · 自发治疗 28.3% · 停药 71.7%</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">HR 0.17</div><div class="label">PFS 治疗获益<br>迄今最大</div></div>
+    <div class="stat"><div class="num accent">83.4%</div><div class="label">3 年 PFS 率</div></div>
+    <div class="stat"><div class="num gold">HR 0.46</div><div class="label">OS 显著改善</div></div>
+    <div class="stat"><div class="num">~6 月</div><div class="label">曲线进入平台期<br>功能性治愈潜力</div></div>
+  </div>
+  <div class="highlight-box">
+    <strong>🌟 Tec-Dara 展现前所未有的疗效，支持其成为 2 线及以上治疗的新标准：</strong>
+    <ul class="bullet-list" style="margin-top:8px">
+      <li>在经 1-3 线既往治疗的 RRMM 患者中，Tec-Dara 协同免疫疗法组合的疗效优于 DPd/DVd</li>
+      <li>PFS 治疗获益为迄今为止最大（HR 0.17），曲线在约 6 个月后进入平台期，<strong>提示存在功能性治愈的潜力</strong></li>
+      <li>3 年 PFS 率达到 83.4%，<strong>在高危细胞遗传学、EMD、ISS Ⅲ 期和既往抗 CD38 暴露患者中均有明确获益</strong></li>
+      <li>总生存期显著改善（HR 0.46）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TOURMALINE-MM1 -->
+<div class="slide">
+  <span class="slide-num">5.9 · RRMM</span>
+  <h2>TOURMALINE-MM1：伊沙佐米 + Rd，全口服复发治疗选择</h2>
+  <div class="research-box">
+    <h5>研究设计（N=722 · 全球、双盲、随机、安慰剂对照 · 26 国 147 中心）</h5>
+    <p><strong>IRd 组：</strong>伊沙佐米 4mg D1,8,15 + 来那度胺 25mg D1-21 + 地塞米松 40mg D1,8,15,22，至疾病进展或毒性不耐受<br>
+    <strong>对照组：</strong>安慰剂 D1,8,15 + 来那度胺 25mg D1-21 + 地塞米松 40mg D1,8,15,22<br>
+    <strong>关键入组：</strong>具有可测量病灶，ECOG 体力评分 0-2 分，既往接受 1-3 线化疗方案</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">20.6 月</div><div class="label">IRd 组<br>中位 PFS</div></div>
+    <div class="stat"><div class="num accent">14.7 月</div><div class="label">安慰剂 + Rd<br>中位 PFS</div></div>
+    <div class="stat"><div class="num gold">HR 0.74</div><div class="label">95%CI 0.59-0.94<br>P<0.01</div></div>
+    <div class="stat"><div class="num">78.3%</div><div class="label">IRd 组 ORR</div></div>
+  </div>
+  <div class="key-quote">证实伊沙佐米 + Rd 显著延长 PFS，为 RRMM 提供全口服治疗选择</div>
+</div>
+
+<!-- 埃普奈明 -->
+<div class="slide">
+  <span class="slide-num">5.10 · RRMM</span>
+  <h2>埃普奈明：不依赖 p53 的凋亡通路，多联合方案探索中</h2>
+  <div class="highlight-box">
+    <strong>🧬 作用机制：</strong>埃普奈明通过结合肿瘤细胞膜上的<strong>死亡受体 4（DR4）/ 死亡受体 5（DR5）</strong>激活外源性细胞凋亡通路，触发 Caspase 级联反应，<strong>诱导不依赖 p53 的细胞凋亡</strong>
+  </div>
+  <table>
+    <thead>
+      <tr><th>联合基础</th><th>方案名称</th><th>具体联合药物</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2"><strong>替代沙利度胺</strong></td><td>Apo-Rd</td><td>埃普奈明 + 来那度胺 + 地塞米松</td></tr>
+      <tr><td>Apo-Pd</td><td>埃普奈明 + 泊马度胺 + 地塞米松</td></tr>
+      <tr><td rowspan="5"><strong>联合其他抗骨髓瘤药物</strong></td><td>Apo-Vd</td><td>埃普奈明 + 硼替佐米 + 地塞米松</td></tr>
+      <tr><td>Apo-Kd</td><td>埃普奈明 + 卡非佐米 + 地塞米松</td></tr>
+      <tr><td>Apo-Id</td><td>埃普奈明 + 伊沙佐米 + 地塞米松</td></tr>
+      <tr><td>Apo-Md</td><td>埃普奈明 + 美法仑 + 地塞米松</td></tr>
+      <tr><td>Apo-Dd</td><td>埃普奈明 + 达雷妥尤单抗 + 地塞米松</td></tr>
+      <tr><td rowspan="3"><strong>四药联合方案</strong></td><td>Apo-VTd</td><td>埃普奈明 + 硼替佐米 + 沙利度胺 + 地塞米松</td></tr>
+      <tr><td>Apo-VMd</td><td>埃普奈明 + 硼替佐米 + 美法仑 + 地塞米松</td></tr>
+      <tr><td>Apo-VRd</td><td>埃普奈明 + 硼替佐米 + 来那度胺 + 地塞米松</td></tr>
+    </tbody>
+  </table>
+  <div class="small-note">基于埃普奈明的作用机制和临床前期的研究数据，临床可以以上方案进行探索（《埃普奈明治疗复发难治多发性骨髓瘤临床应用指导原则（2024 年版）》）</div>
+</div>
+
+<!-- ≥3线 GPRC5D -->
+<div class="slide">
+  <span class="slide-num">5.11 · RRMM</span>
+  <h2>≥3 线 RRMM：GPRC5D 靶点正式纳入，多靶点时代开启</h2>
+  <table>
+    <thead>
+      <tr><th>Ⅰ 级推荐</th><th>Ⅱ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>（1）BCMA CAR-T 细胞治疗：</strong><br>
+          伊基奥仑赛、泽沃基奥仑赛<br><br>
+          <strong>（2）BCMA/CD3 双特异性抗体治疗：</strong><br>
+          特立妥单抗、埃纳妥单抗<br><br>
+          <strong>（3）BCMA-ADC 药物：</strong><br>
+          玛贝兰妥单抗<br><br>
+          <strong style="color:#c0392b">（4）GPRC5D/CD3 双特异性抗体治疗：</strong><br>
+          <strong style="color:#c0392b">塔奎妥单抗</strong> <span class="badge new">NEW</span>
+        </td>
+        <td>
+          • 埃普奈明 + 硼替佐米 + 地塞米松（2 类）<br>
+          • 埃普奈明 + 卡非佐米 + 地塞米松（2 类）<br>
+          • 埃普奈明 + 沙利度胺 + 地塞米松（2 类）<br>
+          • 埃普奈明 + 来那度胺 + 地塞米松（2 类）<br>
+          • 塞利尼索为基础的化疗<br>
+          • BCL2 抑制剂推荐 t(11;14) 患者<br>
+          • <strong style="color:#c0392b">特立妥单抗 + 塔奎妥单抗</strong> <span class="badge new">NEW</span><br>
+          • 苯达莫司汀<br>
+          • 苯达莫司汀 / 硼替佐米 / 地塞米松<br>
+          • 苯达莫司汀 / 卡非佐米 / 地塞米松<br>
+          • 苯达莫司汀 / 来那度胺 / 地塞米松<br>
+          • 大剂量或分次环磷酰胺
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🎯 打破单靶点局限</h3>
+      <p>2026 版在三线及以上治疗中，正式将 <strong>GPRC5D 靶点</strong>纳入，打开了多靶点后线治疗的新格局</p>
+    </div>
+    <div class="card accent">
+      <h3>🔄 灵活序贯设计</h3>
+      <p>临床可基于患者既往暴露和耐药模式，进行<strong>更长远的序贯治疗规划</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- RedirectTT-1 -->
+<div class="slide">
+  <span class="slide-num">5.12 · RRMM</span>
+  <h2>RedirectTT-1：Tal+Tec 双靶点双抗，EMM 患者 ORR 79%</h2>
+  <div class="research-box">
+    <h5>研究设计</h5>
+    <p>筛查 132 例患者评估合格性 → 42 例排除（35 例不符合标准 + 7 例撤回同意）→ 入组治疗 90 例接受 Tal 0.8mg/kg + Tec 3.0mg/kg Q2W<br>
+    <strong>关键入组标准：</strong>髓外骨髓瘤（≥1 个非骨依赖性浆细胞瘤 ≥2cm）、三类药物暴露（PI + IMiD + anti-CD38）、允许既往 CAR-T（≤20% 入组）及 BsAb（非 GPRC5D/BCMA）<br>
+    <strong>排除：</strong>仅骨旁髓外病变、CNS 受累、浆细胞白血病</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">79%</div><div class="label">ORR 总缓解率<br>（极难治 EMM）</div></div>
+    <div class="stat"><div class="num accent">15.4 月</div><div class="label">中位 PFS<br>(95%CI 10.8-NE)</div></div>
+    <div class="stat"><div class="num gold">61%</div><div class="label">12 个月<br>PFS 率</div></div>
+    <div class="stat"><div class="num">13.8 月</div><div class="label">中位 DOR<br>12 月缓解维持 64%</div></div>
+  </div>
+  <div class="key-quote">Tal+Tec 为最难治 EMM 患者提供高效"现货型"双抗免疫治疗新选择</div>
+</div>
+
+<!-- ============ 第六章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">06</div>
+  <h1>高危 MM</h1>
+  <div class="sec-sub">从静态标签到动态全程强化管理</div>
+</div>
+
+<!-- 高危定义演进 -->
+<div class="slide">
+  <span class="slide-num">6.1 · 高危 MM</span>
+  <h2>高危定义演进：新增讨论模块，复发高危统一为 18 个月</h2>
+  <div class="content-block">
+    <h4>📖 高危 MM 的定义（IMWG 操作性定义）</h4>
+    <p>目前尚无对高危多发性骨髓瘤（HRMM）的统一、精确界定。参照 IMWG 提出的操作性定义：在规范治疗前提下，接受自体造血干细胞移植（ASCT）的患者若总生存（OS）<3 年，或未接受 ASCT 者 OS<2 年，可归为 HRMM；其中，接受 ASCT 后 OS<2 年者则被界定为<strong>超高危多发性骨髓瘤（ultra-high risk MM, UHRMM）</strong></p>
+  </div>
+  <div class="highlight-box">
+    <strong>🎯 HRMM 的界定多维评估：</strong>依赖于<strong>肿瘤生物学特征与宿主相关因素</strong>的多维综合评估
+    <ul class="bullet-list" style="margin-top:10px">
+      <li>遗传学异常检测是诊断核心，须通过 <strong>FISH 筛查关键高危异常</strong></li>
+      <li>包括 del(17p)、t(4;14)、t(14;16) 及 1q21 获得/扩增等</li>
+      <li>尤其是同时携带两项以上高危遗传事件的<strong>"双打击"或"三打击"</strong>骨髓瘤</li>
+      <li>基于 ISS 及其修订版本（R-ISS、R2-ISS）分期评估，以及<strong>功能影像学</strong>发现的髓外病变</li>
+    </ul>
+  </div>
+  <div class="warning-box">
+    <strong>⚡ 动态演进特征：</strong>HRMM 的定义具有动态演进特征，既往被认定为高危的不良预后因素，随着新型药物和免疫治疗策略的应用，<strong>可能在一定程度上被克服或重新分层</strong>
+  </div>
+</div>
+
+<!-- 高危≠单一基因异常 -->
+<div class="slide">
+  <span class="slide-num">6.2 · 高危 MM</span>
+  <h2>高危 ≠ 单一基因异常：多维动态风险评估的新范式</h2>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🔄 定义的演变</h3>
+      <p>高危不再仅仅是一个单一的细胞遗传学异常，而是<strong>多因素叠加、随治疗动态演变</strong>的综合风险状态</p>
+    </div>
+    <div class="card blue">
+      <h3>🎯 治疗目标的升级</h3>
+      <p>针对高危患者，缓解（PR/CR）已不足够，治疗的终极目标必须<strong>直指深度缓解与微小残留病（MRD）阴性</strong></p>
+    </div>
+    <div class="card accent">
+      <h3>⚡ 管理强度的提升</h3>
+      <p>2026 版大幅强化了<strong>高危生物学特征</strong>的解释，要求临床采取<strong>更具前瞻性的管理</strong></p>
+    </div>
+  </div>
+  <div class="content-block">
+    <h4>🎯 动态风险评估雷达维度</h4>
+    <ul class="bullet-list">
+      <li><strong>传统遗传学异常：</strong>del(17p)、t(4;14)、1q21 gain/amp</li>
+      <li><strong>临床特征：</strong>骨髓外病变、循环浆细胞、pct gain/amp</li>
+      <li><strong>治疗反馈：</strong>R-ISS Ⅲ 期、早期复发 <18 个月</li>
+      <li><strong>新增：IMS-IWG 基因组共识分期系统</strong></li>
+    </ul>
+  </div>
+  <div class="key-quote">高危界定由"静态标签"转为"动态多因素评估"，治疗目标直指深度缓解与 MRD 阴性</div>
+</div>
+
+<!-- 高危MM全程管理 -->
+<div class="slide">
+  <span class="slide-num">6.3 · 高危 MM</span>
+  <h2>高危 MM 全程管理：强化诱导 → 早期移植 → 持续维持 → 免疫前置</h2>
+  <div class="flow">
+    <div class="flow-step">
+      <h4>① 诱导 Induction</h4>
+      <p>优先四药联合</p>
+    </div>
+    <div class="flow-step highlight">
+      <h4>② 移植 ASCT</h4>
+      <p>提倡尽早自体移植<br>考虑串联移植</p>
+    </div>
+    <div class="flow-step">
+      <h4>③ 维持 Maintenance</h4>
+      <p>长期双药 / 三药联合维持</p>
+    </div>
+    <div class="flow-step highlight">
+      <h4>④ 复发 Relapse</h4>
+      <p>尽早引入免疫新机制<br>优先入组临床试验</p>
+    </div>
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>🚫 摒弃保守思维</h3>
+      <p>高危患者应<strong>避免降阶或保守治疗</strong>，条件允许下应全面强化，力求最大深度缓解</p>
+    </div>
+    <div class="card blue">
+      <h3>💊 维持策略</h3>
+      <p>摒弃单药短期维持，提倡<strong>双药或三药长期维持策略</strong>，持续压制恶性克隆</p>
+    </div>
+    <div class="card accent">
+      <h3>⚡ 复发干预</h3>
+      <p>一旦复发，不应长期停留在传统药物轮换，应<strong>优先启动 CAR-T 或双抗治疗</strong></p>
+    </div>
+  </div>
+  <div class="key-quote">高危 MM 的管理需贯彻"全程强化、尽早深缓解、持续免疫压制"的核心策略</div>
+</div>
+
+<!-- ============ 第七章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">07</div>
+  <h1>新增：CNS-MM 独立章节</h1>
+  <div class="sec-sub">2026 版全新亚型章节 · 填补极端高危管理空白</div>
+</div>
+
+<!-- CNS-MM 系统框架 -->
+<div class="slide">
+  <span class="slide-num">7.1 · CNS-MM</span>
+  <h2>CNS-MM：从诊断路径到综合治疗的系统化框架首次确立</h2>
+  <div class="content-block">
+    <h4>📋 4.9 伴有中枢神经系统受累多发性骨髓瘤的治疗</h4>
+    <p>当患者出现<strong>意识模糊、头痛、视力障碍、肌无力或颅神经麻痹</strong>等提示中枢神经系统（CNS）受累的临床神经系统症状或体征时，应高度警惕并立即启动系统化评估流程，及时开展神经影像学及相关实验室检查以明确病因。在鉴别诊断过程中，应重点<strong>排除高氨血症性脑病、高黏滞综合征及高钙血症</strong>所致的神经系统异常表现。上述代谢紊乱或血液流变学改变虽可引起意识障碍及神经功能受损，但其病理机制并非浆细胞对 CNS 的直接侵犯或播散，因此原则上不属于 CNS 受累范畴。</p>
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>📜 历史意义</h3>
+      <p>填补了既往指南中针对此<strong>少见、高度复杂且高病死率</strong>的极端高危亚型缺乏标准化指导的空白</p>
+    </div>
+    <div class="card blue">
+      <h3>⚠️ 临床挑战</h3>
+      <p>CNS-MM <strong>异质性强，预后极差</strong>，临床极易漏诊或误诊</p>
+    </div>
+    <div class="card accent">
+      <h3>💡 临床启示</h3>
+      <p>遇到疑似神经受累症状时，必须由<strong>被动应对转为主动识别</strong>，尽快启动专科检查与多模式干预</p>
+    </div>
+  </div>
+  <div class="flow" style="margin-top:20px">
+    <div class="flow-step"><h4>① 诊断路径</h4></div>
+    <div class="flow-step"><h4>② 确诊标准</h4></div>
+    <div class="flow-step"><h4>③ 治疗策略</h4></div>
+    <div class="flow-step"><h4>④ 疗效评估</h4></div>
+  </div>
+</div>
+
+<!-- CNS-MM 诊断三步法 -->
+<div class="slide">
+  <span class="slide-num">7.2 · CNS-MM</span>
+  <h2>CNS-MM 诊断三步法：临床提示 → 影像定位 → 脑脊液 / 病理确证</h2>
+  <div class="flow">
+    <div class="flow-step">
+      <h4>Step 1 · 临床提示</h4>
+      <p>头痛、呕吐、意识障碍、颅神经受损等神经症状</p>
+    </div>
+    <div class="flow-step highlight">
+      <h4>Step 2 · 影像定位</h4>
+      <p>首选脑部 / 全脊柱<br>增强 MRI</p>
+    </div>
+    <div class="flow-step">
+      <h4>Step 3 · 金标准确证</h4>
+      <p>脑脊液(CSF)流式细胞术检测克隆性浆细胞 OR 组织病理活检</p>
+    </div>
+  </div>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🔍 鉴别诊断重点</h3>
+      <p>必须明确区分<strong>真正的 CNS 浸润</strong>与单纯椎体病变 / 骨性压迫导致的神经症状</p>
+    </div>
+    <div class="card accent">
+      <h3>⚠️ 诊断误区提示</h3>
+      <p>指南特别强调，<strong>脑脊液常规蛋白电泳的灵敏度和特异性不足</strong>，不应作为确诊依据；<strong>流式细胞学分析和病理才是金标准</strong></p>
+    </div>
+  </div>
+  <div class="key-quote">CNS-MM 确诊强调"神经症状提示 + 增强影像定位 + 脑脊液 / 病理金标准"的三维确证</div>
+</div>
+
+<!-- CNS-MM 治疗 -->
+<div class="slide">
+  <span class="slide-num">7.3 · CNS-MM</span>
+  <h2>CNS-MM 治疗：局部放疗 + 鞘内治疗 + 全身治疗综合模式</h2>
+  <div class="cards-3">
+    <div class="card">
+      <div class="icon-num">1</div>
+      <h3>🎯 局部放疗</h3>
+      <p>针对脑实质 / 脊髓病灶<strong>快速控制</strong>，必要时全脑脊髓照射</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">2</div>
+      <h3>💉 鞘内治疗</h3>
+      <p><strong>甲氨蝶呤、阿糖胞苷、塞替派</strong>等清除脑脊液病灶</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">3</div>
+      <h3>💊 全身治疗</h3>
+      <p>选用具<strong>血脑屏障穿透力药物</strong>：IMiD、塞利尼索；t(11;14) 可选维奈克拉</p>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>✅ 禁忌与规范</h4>
+      <p>鞘内甲氨蝶呤不宜与放疗同期应用（<strong>需间隔 2 周</strong>）</p>
+    </div>
+    <div class="col-box right">
+      <h4>⚠️ 免疫治疗的谨慎评估</h4>
+      <p>针对 CAR-T 与双抗，指南指出虽非绝对禁忌，但因存在<strong>极高概率的免疫效应细胞相关神经毒性（ICANS）</strong>，需在严密监测下极其谨慎地评估使用</p>
+    </div>
+  </div>
+  <div class="key-quote">CNS-MM 治疗需多学科协作，采用"局部放疗 + 鞘内治疗 + 全身治疗"三柱模式综合管理</div>
+</div>
+
+<!-- ============ 第八章 ============ -->
+<div class="slide section-divider">
+  <div class="sec-num">08</div>
+  <h1>CAR-T 与双特异性抗体</h1>
+  <div class="sec-sub">产品名录 · 序贯策略 · 安全管理全面规范</div>
+</div>
+
+<!-- CAR-T 双重更新 -->
+<div class="slide">
+  <span class="slide-num">8.1 · CAR-T 双抗</span>
+  <h2>CAR-T 章节双重更新：国内获批产品名录 + 二次 CAR-T 策略</h2>
+  <table>
+    <thead>
+      <tr><th>药物名称</th><th>靶点</th><th>CAR 结构</th><th>关键研究</th><th>中国获批时间</th><th>获批适应证</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>伊基奥仑赛注射液</strong></td><td>BCMA</td><td>全人源</td><td>FUMANBA-1</td><td>2023 年 6 月</td><td>R/R MM 成人患者，既往经过至少 3 线治疗后进展（至少使用过一种 PI 及 IMiD）</td></tr>
+      <tr><td><strong>泽沃基奥仑赛注射液</strong></td><td>BCMA</td><td>全人源</td><td>LUMMICAR-2</td><td>2024 年 3 月</td><td>既往经过至少 3 线治疗后进展（至少使用过 PI 及 IMiD）的 R/R MM 成人患者</td></tr>
+      <tr><td><strong>西达基奥仑赛注射液</strong></td><td>BCMA</td><td>羊驼源</td><td>CARTIFAN-1</td><td>2024 年 8 月</td><td>既往接受过至少 3 线治疗后进展（至少使用过一种 PI 及 IMiD）的 R/R MM 成人患者</td></tr>
+    </tbody>
+  </table>
+  <div class="content-block">
+    <h4>🔄 二次 CAR-T 治疗分层推荐</h4>
+    <ul class="bullet-list">
+      <li><strong>若复发时 BCMA 表达仍保留且距首次 CAR-T 间隔长（如 ≥12 个月）：</strong>同靶点不同产品的再次 CAR-T 治疗亦可作为选择之一</li>
+      <li><strong>若距首次 BCMA CAR-T 治疗间隔较短（如 <12 个月）复发，或检测 BCMA 表达下调或丧失：</strong>建议选择非 BCMA 靶点（如 GPRC5D）CAR-T 治疗</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三款 BCMA CAR-T 数据 -->
+<div class="slide">
+  <span class="slide-num">8.2 · CAR-T 双抗</span>
+  <h2>三款国产 BCMA CAR-T：ORR 87-99%，MRD 阴性率 >90%</h2>
+  <div class="cards-3">
+    <div class="card">
+      <h3>伊基奥仑赛</h3>
+      <div class="stats-row" style="grid-template-columns:1fr;margin:12px 0">
+        <div class="stat"><div class="num">98.9%</div><div class="label">ORR</div></div>
+      </div>
+      <ul class="bullet-list">
+        <li>MRD 阴性率：<strong>98.9%</strong></li>
+        <li>中位 PFS：<strong>35.9 月</strong></li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>西达基奥仑赛</h3>
+      <div class="stats-row" style="grid-template-columns:1fr;margin:12px 0">
+        <div class="stat"><div class="num">87.5%</div><div class="label">ORR</div></div>
+      </div>
+      <ul class="bullet-list">
+        <li>MRD 阴性率：<strong>97.6%</strong></li>
+        <li>中位 PFS：<strong>25.5 月</strong></li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>泽沃基奥仑赛</h3>
+      <div class="stats-row" style="grid-template-columns:1fr;margin:12px 0">
+        <div class="stat"><div class="num">92.2%</div><div class="label">ORR</div></div>
+      </div>
+      <ul class="bullet-list">
+        <li>MRD 阴性率：<strong>91.9%</strong></li>
+        <li>18 月 PFS 率：<strong>61.9%</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-quote">CAR-T 章节更新确立了标准化名录，三款 CAR-T 产品数据彰显深度缓解与持久疗效的临床价值</div>
+</div>
+
+<!-- CAR-T 前评估 T 细胞质量 -->
+<div class="slide">
+  <span class="slide-num">8.3 · CAR-T 双抗</span>
+  <h2>CAR-T 前评估新增：T 细胞质量检测正式纳入推荐</h2>
+  <table>
+    <thead>
+      <tr><th>评估项目</th><th>Ⅰ 级推荐</th><th>Ⅱ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>病史采集和体格检查</td><td>完整的病史采集及体格检查；生命体征；体能状态评估（ECOG PS）</td><td>—</td></tr>
+      <tr>
+        <td>实验室检查</td>
+        <td>血常规和白细胞分类</td>
+        <td>
+          对于<strong>淋巴细胞计数偏低的患者、既往接受过多线治疗者尤其是接受过双特异性抗体治疗的患者</strong>，应重点关注 <strong>T 细胞耗竭及衰老状态</strong>。建议检测：<br>
+          ① <strong>分化表型</strong>，如 Tn/Tscm/Tcm/Tem/Teff 等比例<br>
+          ② <strong>耗竭标志物</strong>，如 PD-1、TIM-3、LAG-3 等<br>
+          ③ <strong>衰老标志物</strong>，包括 CD57、CD27、CD28<br>
+          综合评估 T 细胞质量，有助于预判 CAR-T 细胞制备成功率及产品效能
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <strong>🎯 T 细胞基线质控 Checklist：</strong>
+    <ul class="bullet-list" style="margin-top:8px">
+      <li>采集时机评估</li>
+      <li>既往淋巴毒性药物洗脱期评估</li>
+    </ul>
+  </div>
+  <div class="key-quote">强调 T 细胞质量评估：采集时的 T 细胞状态直接决定制备成功率与最终疗效</div>
+</div>
+
+<!-- 单采前洗脱期 -->
+<div class="slide">
+  <span class="slide-num">8.4 · CAR-T 双抗</span>
+  <h2>单采前洗脱期细化：双抗 ≥4 周，ADC ≥4 周，长期暴露需延长</h2>
+  <table>
+    <thead>
+      <tr><th>评估项目</th><th>Ⅰ 级推荐</th><th>Ⅱ 级推荐</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>细胞毒性化疗或蛋白酶体抑制剂</td><td>大剂量化疗间隔 3-4 周；避免使用苯达莫司汀和大剂量环磷酰胺，以免影响 T 细胞功能；短效细胞毒性/抗增殖药物间隔 3 天</td><td>—</td></tr>
+      <tr><td>单克隆抗体</td><td>—</td><td>洗脱 1 周</td></tr>
+      <tr><td>皮质类固醇</td><td>全身糖皮质激素至少间隔 3 天，最好 7 天，允许使用生理替代剂量、外用和吸入性类固醇激素</td><td>—</td></tr>
+      <tr style="background:#fff3d6"><td><strong>双特异性抗体（BsAb）</strong> <span class="badge new">NEW</span></td><td><strong>单采前短期暴露于 BsAb 建议洗脱 4 周</strong></td><td><strong>长期暴露于 BsAb（≥3 个周期）者，建议延长洗脱期，并在单采前行 T 细胞质量评估</strong></td></tr>
+      <tr style="background:#fff3d6"><td><strong>抗体偶联药物（ADC）</strong> <span class="badge new">NEW</span></td><td><strong>单采前短期暴露于 ADC 建议至少洗脱 4 周</strong></td><td>—</td></tr>
+      <tr><td>放疗</td><td>影响骨髓不到 5% 的放疗可能不需要洗脱期</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <div class="content-block">
+    <h4>📚 循证依据</h4>
+    <ul class="bullet-list">
+      <li><strong>双抗洗脱期：</strong>2026 年 EBMT 调查显示，真实世界对双抗的单采前洗脱存在明显差异，但 BCMA 双抗常见做法集中在 2-4 周。近期研究提示：单采前接受 T-cell engager 暴露与 cilta-cel 制造出现 OOS（超规格/不合格）风险升高相关，<strong>>3 周更符合"兼顾药物清除 + T 细胞功能恢复"的审慎逻辑</strong></li>
+      <li><strong>BCMA ADC 洗脱期：</strong>belantamab mafodotin 为代表，稳态后半衰期可到约 14.3 天，约 3-4 周经历 2 个半衰期</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 塔奎妥单抗 -->
+<div class="slide">
+  <span class="slide-num">8.5 · CAR-T 双抗</span>
+  <h2>塔奎妥单抗纳入：GPRC5D 靶点正式进入 CSCO 指南</h2>
+  <table>
+    <thead>
+      <tr><th>药物</th><th>靶点</th><th>适应证</th><th>给药方案</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>塔奎妥单抗 Talquetamab</strong></td>
+        <td><strong>GPRC5D × CD3</strong></td>
+        <td>单药适用于既往接受过至少三线治疗（包括一种 PI、一种免疫调节剂和一种抗 CD38 单克隆抗体）的 R/R MM 成人患者</td>
+        <td>
+          <strong>方案一（每周一次）：</strong>递增剂量 0.01mg/kg 和 0.06mg/kg（D1/D3）→ 首次治疗剂量 0.4mg/kg（D5）→ 后续 0.4mg/kg 每周一次<br><br>
+          <strong>方案二（每两周一次）：</strong>递增剂量 0.01/0.06/0.4mg/kg（D1/D3/D5）→ 首次治疗剂量 0.8mg/kg（D7）→ 后续 0.8mg/kg 每两周一次
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warning-box">
+    <strong>⚠️ 塔奎妥单抗治疗前用药（递增剂量每次给药前 1-3 小时）：</strong>
+    <ul class="bullet-list" style="margin-top:8px">
+      <li>皮质类固醇（口服或静脉给予地塞米松 16mg 或等效药物）</li>
+      <li>抗组胺药（口服或静脉给予苯海拉明 50mg 或等效药物）</li>
+      <li>解热镇痛药（口服或静脉给予对乙酰氨基酚 650-1000mg 或等效药物）</li>
+      <li>治疗前应进行预防性抗病毒治疗，以预防水痘 - 带状疱疹病毒再激活</li>
+    </ul>
+  </div>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🌟 进入多靶点时代</h3>
+      <p>正式纳入 <strong>GPRC5DxCD3 双抗（塔奎妥单抗）</strong>，丰富双抗武器库</p>
+    </div>
+    <div class="card accent">
+      <h3>📋 规范给药流程</h3>
+      <p>详细界定了<strong>给药前处理、分步递增方案以及因毒性中断后的重启策略</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- MonumenTAL-1 -->
+<div class="slide">
+  <span class="slide-num">8.6 · CAR-T 双抗</span>
+  <h2>MonumenTAL-1：塔奎妥单抗 ORR ~70%，开辟非 BCMA 通路</h2>
+  <div class="research-box">
+    <h5>研究设计（NCT04634552 · 开放标签，多中心，1/Ⅱ 期）</h5>
+    <p>Talquetamab（GPRC5D×CD3）双特异性抗体 · 适应症：R/R MM<br>
+    <strong>关键入组：</strong>≥4 线既往治疗、三类药物暴露（PI + IMiD + 抗 CD38 单抗）、ECOG PS 0-2、可测量疾病<br>
+    <strong>Phase 2：</strong>队列 A（n=143）0.4 mg/kg SC QW | 队列 B（n=145）0.8 mg/kg SC Q2W<br>
+    <strong>主要终点：</strong>ORR（IRC 评估，IMWG 标准）</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>终点数据</th><th>QW (n=143)</th><th>Q2W (n=154)</th><th>TCR 最佳 (n=78)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ORR (%)</td><td><strong>74.1</strong></td><td>69.5</td><td>66.7</td></tr>
+      <tr><td>≥VGPR (%)</td><td>51.1</td><td>38.3</td><td>34.6</td></tr>
+      <tr><td>中位随访时间（月）</td><td>38.2</td><td>31.2</td><td>30.3</td></tr>
+      <tr><td>MRD 阴性率 (10⁻⁵, %)</td><td>64.3</td><td><strong>65.2</strong></td><td>57.1</td></tr>
+      <tr><td>中位 DOR（月）</td><td>9.5</td><td>17.5</td><td><strong>19.2</strong></td></tr>
+      <tr><td>中位 PFS（月）</td><td>7.5</td><td><strong>11.2</strong></td><td>7.7</td></tr>
+      <tr><td>中位 OS（月）</td><td>34</td><td>未达到</td><td>28</td></tr>
+      <tr><td>36 个月 OS 率 (%)</td><td>49.3</td><td><strong>60.8</strong></td><td>44.6</td></tr>
+    </tbody>
+  </table>
+  <div class="key-quote">靶向 GPRC5D 的塔奎妥单抗展现出区别于 BCMA 的独特抗肿瘤活性，ORR 约 70%，但须警惕皮肤相关不良事件及味觉障碍</div>
+</div>
+
+<!-- CRS 管理升级 -->
+<div class="slide">
+  <span class="slide-num">8.7 · CAR-T 双抗</span>
+  <h2>CRS 管理升级：鼓励预防性使用托珠单抗，推动门诊化管理</h2>
+  <table>
+    <thead>
+      <tr><th>级别</th><th>2026 版管理建议</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#fff3d6"><td><strong>预防</strong> <span class="badge new">NEW</span></td><td><strong style="color:#c0392b">鼓励使用托珠单抗预防 CRS 反应</strong></td></tr>
+      <tr><td>1 级</td><td>观察或者考虑早期应用托珠单抗或地塞米松，尤其是持续 1 级 24-48 小时以上</td></tr>
+      <tr><td>2 级</td><td>托珠单抗 8mg/kg；如果没有改善，考虑增加二线治疗（如类固醇）；应进行支持治疗，包括补氧、补液等</td></tr>
+      <tr><td>3 级</td><td>托珠单抗联合地塞米松 10mg 每 6 小时一次；转至 ICU；根据临床指征给予支持治疗；考虑大剂量类固醇和挽救性 CRS 治疗</td></tr>
+      <tr><td>4 级</td><td>托珠单抗联合大剂量类固醇；转至 ICU；根据临床指征给予支持治疗；考虑大剂量类固醇和挽救性 CRS 治疗</td></tr>
+    </tbody>
+  </table>
+  <div class="cards-2">
+    <div class="card">
+      <h3>🔬 机制逻辑</h3>
+      <ul class="bullet-list">
+        <li>双抗 step-up 期 CRS 高发且可预测</li>
+        <li>IL-6 是 CRS 炎症放大的关键通路</li>
+        <li>托珠单抗主要拦截炎症放大轴</li>
+        <li>不直接削弱双抗介导的主要杀瘤效应</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>🏥 临床逻辑</h3>
+      <ul class="bullet-list">
+        <li>预防性托珠单抗可降低 CRS 发生率 / 严重度</li>
+        <li>减少激素追加、剂量延迟和再入院</li>
+        <li>支持双抗更安全地标准化实施</li>
+        <li><strong>甚至向门诊管理过渡</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第九章 疗效评估&MRD ============ -->
+<div class="slide">
+  <span class="slide-num">9.1 · 疗效评估</span>
+  <h2>MRD 检测角色跃升：从疗效评估指标到治疗决策驱动力</h2>
+  <div class="content-block">
+    <h4>📋 11. 疗效评估及 MRD 检测</h4>
+    <p>MM 患者在治疗期间应严格监测疗效及疾病/治疗相关症状，建议参照 IMWG 最新标准评估缓解深度（如 CR、sCR、MRD 阴性等）。监测项目除血常规、代谢生化谱外，应重点通过 <strong>血清蛋白电泳（SPEP）、24 小时尿蛋白电泳（UPEP）及血清游离轻链（sFLC）</strong>动态追踪 M 蛋白水平，并在临床指征需要（尤其是怀疑复发）时行骨髓穿刺活检及 FISH 检测。</p>
+  </div>
+  <div class="highlight-box">
+    <strong>📊 关键研究证据：</strong>
+    <ul class="bullet-list" style="margin-top:8px">
+      <li>FDG-PET/CT、低剂量 CT 及全身非增强 MRI 是随访的重要手段</li>
+      <li>Zamagni 等研究发现，<strong>PET/CT 阳性患者的中位 PFS 仅为 44 个月，远低于阴性组的 84 个月</strong></li>
+      <li>MRI 功能成像序列（DWI）显示出比 PET/CT 更高的微小残留病灶敏感性，且具有无辐射优势</li>
+    </ul>
+  </div>
+  <div class="flow">
+    <div class="flow-step"><h4>诱导后</h4><p>MRD 评估</p></div>
+    <div class="flow-step highlight"><h4>移植后 3 月</h4><p>MRD 评估</p></div>
+    <div class="flow-step"><h4>巩固后</h4><p>MRD 评估</p></div>
+    <div class="flow-step highlight"><h4>维持期</h4><p>定期 MRD 动态监测</p></div>
+  </div>
+  <div class="key-quote">MRD 阴性不仅是疗效金标准，正逐渐成为高危患者是否需要强化干预或延长维持治疗的决定性参考指标</div>
+</div>
+
+<!-- 支持治疗五大领域 -->
+<div class="slide">
+  <span class="slide-num">9.2 · 支持治疗</span>
+  <h2>支持治疗五大领域系统讨论：有效治疗始于规范防护</h2>
+  <div class="highlight-box">
+    <strong>📌 2026 版 vs 2025 版：</strong>支持治疗推荐内容对 2025 版无更新，但 2026 版在讨论中更<strong>系统强调了五大支持治疗领域</strong>，体现全程管理理念的深化
+  </div>
+  <div class="cards-3">
+    <div class="card">
+      <h3>① 骨病管理（地舒单抗 / 双磷酸盐）</h3>
+      <ul class="bullet-list">
+        <li>所有症状性 MM 均应行骨改良治疗（Ⅰ 类推荐）</li>
+        <li>地舒单抗在肾功能不全患者中更安全</li>
+        <li>唑来膦酸需口腔评估、监测肾功能以降低 ONJ 风险</li>
+        <li><strong>高钙血症：</strong>充分补液 + 唑来膦酸 / 地舒单抗 / 降钙素紧急干预</li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>② 肾功能保护</h3>
+      <ul class="bullet-list">
+        <li>肾脏受累发生率 <strong>20%~50%</strong>，以轻链管型肾病为主</li>
+        <li>需警惕高钙血症、AL 淀粉样变及肾毒性药物等致病因素</li>
+        <li>高黏滞综合征可考虑血浆置换</li>
+        <li>贫血者依据 EPO 水平酌情用促红素</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>③ 感染预防</h3>
+      <ul class="bullet-list">
+        <li>严格遵循 <strong>CSCO 及 CDC 相关指南</strong>，开展感染风险分层</li>
+        <li>预防性用药及疫苗接种管理</li>
+        <li>构建覆盖全周期的感染防护体系</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>④ 静脉血栓预防</h3>
+      <ul class="bullet-list">
+        <li>IMPEDE/SAVED 评估</li>
+        <li>确诊后<strong>前 6 个月 VTE 风险最高</strong>，需重点防护</li>
+        <li>无禁忌证情况下实施抗凝或抗血小板预防治疗</li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <h3>⑤ 神经毒性监测</h3>
+      <ul class="bullet-list">
+        <li>蛋白酶体抑制剂（硼替佐米等）及 IMiDs 相关周围神经病变需动态评估</li>
+        <li>双抗 / CAR-T 等新型免疫治疗相关 <strong>CRS 及 ICANS</strong> 需密切监测与管理</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h3>💡 核心理念</h3>
+      <p>"<strong>全程慢病管理</strong>"——有效治疗必须建立在<strong>规范支持治疗基础之上</strong>，构建覆盖骨病、肾损害、血栓及感染风险的综合防护体系</p>
+    </div>
+  </div>
+</div>
+
+<!-- 总结 -->
+<div class="slide">
+  <span class="slide-num">总 结</span>
+  <h2>2026 版 MM 指南五大核心更新要点</h2>
+  <div class="cards-3" style="grid-template-columns:1fr;gap:14px">
+    <div class="card">
+      <div class="icon-num">1</div>
+      <h3>结构升级 · 循证转型</h3>
+      <p>2026 版 MM 章节从结构上实现了由"<strong>推荐列表型</strong>"向"<strong>推荐 + 证据解释型</strong>"指南的升级，学习和使用价值显著增强</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">2</div>
+      <h3>前线强化 · 四药主流</h3>
+      <p>在新诊断患者中，<strong>四药诱导地位进一步提高</strong>，<strong>CD38 单抗联合方案</strong>成为前线治疗核心趋势</p>
+    </div>
+    <div class="card accent">
+      <div class="icon-num">3</div>
+      <h3>免疫前移 · 早期介入</h3>
+      <p>在复发 / 难治患者中，<strong>CAR-T 与双抗明显前移</strong>，提示临床需要尽早开展免疫治疗可及性评估和路径规划</p>
+    </div>
+    <div class="card">
+      <div class="icon-num">4</div>
+      <h3>亚型完善 · CNS-MM 新章</h3>
+      <p>新增 <strong>CNS-MM 独立章节</strong>，完善了特殊高危亚型的规范化管理框架</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-num">5</div>
+      <h3>高危现代化 · MRD 驱动</h3>
+      <p>高危 MM 的定义和治疗思路更现代化，更强调<strong>深缓解、MRD 阴性、持续维持和新机制治疗整合</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- 致谢 -->
+<div class="slide end">
+  <h1>敬请各位专家批评指正！</h1>
+  <p style="margin-top:30px;font-size:26px;color:#4a9eff;font-weight:600">Thank You</p>
+  <p style="margin-top:30px;font-size:20px;color:rgba(255,255,255,0.85)">中国医学科学院血液病医院</p>
+  <p style="margin-top:10px;font-size:18px;color:rgba(255,255,255,0.75)">CSCO 骨髓瘤专家委员会</p>
+</div>
+
+</div>
+</body>
+</html>
